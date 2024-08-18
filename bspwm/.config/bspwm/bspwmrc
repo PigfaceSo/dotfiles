@@ -8,6 +8,9 @@ pgrep -x polybar > /dev/null || polybar --reload top &
 
 ~/.fehbg &
 
+setxkbmap -layout us,th -model pc104 -option grp:caps_toggle
+
+
 bspc monitor -d I II III IV
 
 bspc config focused_border_color '#ffae00'
