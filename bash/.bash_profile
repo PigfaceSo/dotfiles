@@ -6,6 +6,8 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export BROWSER="firefox"
+export SESSION="bspwm"
+export DESKTOP_SESSION="bspwm"
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
