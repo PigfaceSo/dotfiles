@@ -3,10 +3,8 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
 
-dbus-run-session pulseaudio --start &
-pgrep -x pa-applet > /dev/null || pa-applet &
+pgrep -x pipewire > /dev/null || pipewire &
 
-killall -q polybar
 pgrep -x polybar > /dev/null || polybar --reload top &
 
 ~/.fehbg &
