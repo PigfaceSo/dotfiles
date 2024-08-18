@@ -3,6 +3,9 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x picom > /dev/null || picom &
 
+dbus-run-session pulseaudio --start &
+pgrep -x pa-applet > /dev/null || pa-applet &
+
 killall -q polybar
 pgrep -x polybar > /dev/null || polybar --reload top &
 
@@ -30,6 +33,9 @@ bspc config pointer_follows_focus false
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Firefox desktop='^2'
 bspc rule -a Thunar state=floating
+bspc rule -a Pcmanfm state=floating
+bspc rule -a pavucontrol state=floating
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a Lxappearance state=floating
