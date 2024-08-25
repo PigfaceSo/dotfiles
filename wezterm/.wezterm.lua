@@ -3,13 +3,17 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local act = wezterm.action
 
+-- Audio_bell
 config.audible_bell = "Disabled"
 
+-- Font
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 14.0
 
+-- Tab
 config.enable_tab_bar = false
 
+-- Window
 config.window_padding = {
   left = 2,
   right = 0,
@@ -18,6 +22,10 @@ config.window_padding = {
 }
 config.window_background_opacity = 0.9
 
+-- Colorscheme
+config.color_scheme = 'Bamboo Multiplex'
+
+-- Keybind
 config.disable_default_key_bindings = true
 config.keys = {
   { key = "F11", action = act.ToggleFullScreen },
