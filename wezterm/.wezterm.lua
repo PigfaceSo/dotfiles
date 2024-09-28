@@ -3,12 +3,13 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local act = wezterm.action
 
+config.enable_wayland = true
 -- Audio_bell
 config.audible_bell = "Disabled"
 
 -- Font
-config.font = wezterm.font("Hack Nerd Font")
-config.font_size = 14.0
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font_size = 10.0
 
 -- Tab
 config.enable_tab_bar = false
@@ -20,10 +21,10 @@ config.window_padding = {
   top = 2,
   bottom = 0,
 }
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.75
 
 -- Colorscheme
-config.color_scheme = 'Bamboo Multiplex'
+-- config.color_scheme = 'Bamboo Multiplex'
 
 -- Keybind
 config.disable_default_key_bindings = true
