@@ -1,18 +1,28 @@
 syntax on
+set encoding=utf-8 "enc
+set nobackup "nobk
+set nowritebackup "nowb
 set termguicolors "tgc
 let loaded_matchparen = 1
 
 call plug#begin()
+    Plug 'joshdick/onedark.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'mbbill/undotree'
 call plug#end()
+
+set background=dark "bg
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:undotree_SetFocusWhenToggle = 1
 
 set number "nu
 set relativenumber "rnu
 set cursorline "cul
+set signcolumn=yes "scl
 
 set expandtab "et
 set tabstop=4 "ts
@@ -38,10 +48,10 @@ set noswapfile "swf
 set undofile "udf
 set undodir=~/.vim/undo "udir
 set confirm "cf
+set ttimeoutlen=10 "ttm
+set updatetime=300 "ut
 
 let g:mapleader = " "
-
-set ttimeoutlen=10
 
 nnoremap <esc> <cmd>noh<cr><esc>
 nnoremap <C-d> <C-d>zz

@@ -21,7 +21,7 @@ config.window_padding = {
   top = 2,
   bottom = 0,
 }
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.80
 
 -- Colorscheme
 -- config.color_scheme = 'Bamboo Multiplex'
