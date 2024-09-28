@@ -8,6 +8,19 @@ export HISTCONTROL=ignoreboth
 
 source ~/git-prompt.sh
 
+
+PROMPT_COMMAND='BAT=$(cat /sys/class/power_supply/BAT0/capacity);'
+PROMPT_COMMAND="$PROMPT_COMMAND"'GIT=$(__git_ps1 "󰊢 %s ")'
+PS1='[ \w ] '
+PS1="$PS1"'\[\e[38;5;214m\]'
+PS1="$PS1"'${GIT}'
+PS1="$PS1"'\[\e[0m\]'
+#PS1="$PS1"'\[\e[38;5;40m\]'
+#PS1="$PS1"'󱟢 ${BAT}% '
+#PS1="$PS1"'\[\e[0m\]'
+PS1="$PS1"'\n'
+PS1="$PS1"'\$ '
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/wonwow/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -23,18 +36,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-PROMPT_COMMAND='BAT=$(cat /sys/class/power_supply/BAT0/capacity);'
-PROMPT_COMMAND="$PROMPT_COMMAND"'GIT=$(__git_ps1 "󰊢 %s ")'
-PS1='[ \w ] '
-PS1="$PS1"'\[\e[38;5;214m\]'
-PS1="$PS1"'${GIT}'
-PS1="$PS1"'\[\e[0m\]'
-#PS1="$PS1"'\[\e[38;5;40m\]'
-#PS1="$PS1"'󱟢 ${BAT}% '
-#PS1="$PS1"'\[\e[0m\]'
-PS1="$PS1"'\n'
-PS1="$PS1"'\$ '
-
 eval "$(zoxide init --cmd cd bash)"
 eval "$(fzf --bash)"
 
@@ -44,5 +45,3 @@ alias nv="nvim"
 alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
-
-

@@ -55,7 +55,7 @@ set updatetime=300 "ut
 
 let g:mapleader = " "
 
-nnoremap <esc> <cmd>noh<cr><esc>
+nnoremap <esc> <cmd>nohl<cr><esc>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap H <cmd>bprevious<cr>
@@ -64,7 +64,7 @@ nnoremap <leader>e <cmd>Ex<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
 
-inoremap <esc> <cmd>noh<cr><esc>
+inoremap <esc> <cmd>nohl<cr><esc>
 
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
