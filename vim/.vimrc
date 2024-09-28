@@ -47,6 +47,7 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap H <cmd>bprevious<cr>
 nnoremap L <cmd>bnext<cr>
+nnoremap <leader>e <cmd>Ex<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
 
