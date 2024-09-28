@@ -12,6 +12,7 @@ let g:undotree_SetFocusWhenToggle = 1
 
 set number "nu
 set relativenumber "rnu
+set cursorline "cul
 
 set expandtab "et
 set tabstop=4 "ts

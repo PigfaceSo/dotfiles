@@ -8,7 +8,7 @@ config.enable_wayland = true
 config.audible_bell = "Disabled"
 
 -- Font
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 config.font_size = 10.0
 
 -- Tab
