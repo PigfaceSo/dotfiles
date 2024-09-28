@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'joshdick/onedark.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mbbill/undotree'
 call plug#end()
 
@@ -23,6 +24,7 @@ set number "nu
 set relativenumber "rnu
 set cursorline "cul
 set signcolumn=yes "scl
+set nowrap 
 
 set expandtab "et
 set tabstop=4 "ts
