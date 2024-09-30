@@ -3,8 +3,8 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 export BROWSER="firefox"
 export SESSION="bspwm"
 export DESKTOP_SESSION="bspwm"
