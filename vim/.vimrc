@@ -3,13 +3,15 @@ set encoding=utf-8 "enc
 set nobackup "nobk
 set nowritebackup "nowb
 set termguicolors "tgc
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 
 call plug#begin()
     Plug 'joshdick/onedark.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'ervandew/supertab'
+    " Plug 'vim-scripts/AutoComplPop'
+    Plug 'lifepillar/vim-mucomplete'
     Plug 'mbbill/undotree'
 call plug#end()
 
@@ -19,20 +21,27 @@ hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_SplitWidth = 20
+
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 0
 
 set number "nu
 set relativenumber "rnu
 set cursorline "cul
 set signcolumn=yes "scl
 set nowrap 
+set pumheight=10 "ph
+set completeopt=menuone,noselect
 
 set expandtab "et
+set smarttab "sta
 set tabstop=4 "ts
 set shiftwidth=4 "sw
 
 set autoindent "ai
 set smartindent "si
-set cindent "cin
+set cindent "ci
 
 set hlsearch "hls
 set ignorecase "ic
@@ -43,6 +52,7 @@ set showmode "smd
 set showcmd "sc
 set showmatch "sm
 set scrolloff=10 "so
+set shortmess+=c "shm
 
 set wildmenu "wmnu
 set hidden "hid
