@@ -9,11 +9,20 @@ call plug#begin()
     Plug 'joshdick/onedark.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
+    Plug 'christoomey/vim-tmux-navigator'
     " Plug 'ervandew/supertab'
     " Plug 'vim-scripts/AutoComplPop'
     Plug 'lifepillar/vim-mucomplete'
     Plug 'mbbill/undotree'
 call plug#end()
+
+if has('win64')
+    let &t_SI = "\e[2 q"
+    let &t_EI = "\e[2 q"
+    set belloff=all
+    set backspace=2
+    let g:undotree_DiffCommand="fc"
+endif
 
 set background=dark "bg
 colorscheme onedark
@@ -43,7 +52,7 @@ set autoindent "ai
 set smartindent "si
 set cindent "ci
 
-set hlsearch "hls
+set nohlsearch "nohls
 set ignorecase "ic
 set smartcase "scs
 set incsearch "is
@@ -65,7 +74,6 @@ set updatetime=300 "ut
 
 let g:mapleader = " "
 
-nnoremap <esc> <cmd>nohls<cr><esc>
 nnoremap <C-w>d <cmd>bdelete<cr>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
@@ -75,8 +83,6 @@ nnoremap <leader>e <cmd>Ex<cr>
 nnoremap <leader>ff <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
-
-inoremap <esc> <cmd>nohls<cr><esc>
 
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
