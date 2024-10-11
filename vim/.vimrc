@@ -10,8 +10,8 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-surround'
     Plug 'christoomey/vim-tmux-navigator'
-    " Plug 'ervandew/supertab'
-    " Plug 'vim-scripts/AutoComplPop'
+    Plug 'takac/vim-hardtime'
+    Plug 'unblevable/quick-scope'
     Plug 'lifepillar/vim-mucomplete'
     Plug 'mbbill/undotree'
 call plug#end()
@@ -28,6 +28,15 @@ set background=dark "bg
 colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+let g:hardtime_default_on = 1
+let g:hardtime_timeout = 5000
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 1
+let g:hardtime_motion_with_count_resets = 1
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_SplitWidth = 20
@@ -63,7 +72,11 @@ set showmatch "sm
 set scrolloff=10 "so
 set shortmess+=c "shm
 
+set grepprg=git\ grep\ -n "gp
+set path+=**
 set wildmenu "wmnu
+set wildignorecase "wic
+set wildignore=\*node_modules/\*,\*.git/\* "wig
 set hidden "hid
 set noswapfile "swf
 set undofile "udf
@@ -83,6 +96,7 @@ nnoremap <leader>e <cmd>Ex<cr>
 nnoremap <leader>ff <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
+" nnoremap <leader>g <cmd>!fzf-tmux -p --reverse<cr>
 
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
