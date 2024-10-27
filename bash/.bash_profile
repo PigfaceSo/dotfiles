@@ -3,8 +3,11 @@
 # Get the aliases and functions
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 
-export EDITOR="vim"
-export VISUAL="vim"
+export HISTFILESIZE=5000
+export HISTCONTROL=ignoreboth
+
+export EDITOR="vim-x11"
+export VISUAL="vim-x11"
 export BROWSER="firefox"
 export SESSION="bspwm"
 export DESKTOP_SESSION="bspwm"

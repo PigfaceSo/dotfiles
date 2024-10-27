@@ -3,10 +3,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libffi.so.7
-export HISTFILESIZE=5000
-export HISTCONTROL=ignoreboth
-
 source ~/git-prompt.sh
 
 
@@ -25,7 +21,10 @@ PS1="$PS1"'\$ '
 eval "$(zoxide init --cmd cd bash)"
 eval "$(fzf --bash)"
 
-alias ls='ls --color=auto'
+alias vim="vim-x11"
+alias cc="clear"
+# alias ls='ls --color=auto'
+alias ls="eza --icons=always"
 alias grep='grep --color=auto'
 alias nv="nvim"
 alias ga="git add"
