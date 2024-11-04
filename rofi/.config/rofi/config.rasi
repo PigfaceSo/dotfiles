@@ -1,9 +1,15 @@
 configuration {
-  modi: "window,run,drun";
-  display-drun: "A: ";
-  display-window: "W: ";
+  modi: "window,run,drun,ssh,emoji";
+  display-drun: "  ";
+  display-window: "  ";
+  display-run: "  ";
+  display-ssh: "  ";
+  display-emoji: "  ";
   drun-display-format: "{name}";
+  drun-match-fields: "name";
   window-display-format: "{name}";
+  case-sensitive: false;
+  show-icons: false;
 }
 
 @theme "/dev/null"
@@ -12,7 +18,7 @@ configuration {
   background-color: Black;
   border-color: White;
   text-color: White;
-  font: "Itim 15";
+  font: "Itim 12";
 }
 
 window {
