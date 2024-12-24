@@ -1,22 +1,25 @@
 #! /bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x picom > /dev/null || picom &
-pgrep -x pipewire > /dev/null || pipewire &
+# pgrep -x picom > /dev/null || picom &
+# pgrep -x nm-applet > /dev/null || nm-applet &
 
+# pgrep -x nm-tray > /dev/null || nm-tray &
 # pgrep -x polybar > /dev/null || polybar --reload top &
 # pgrep -x flameshot > /dev/null || flameshot &
 
-~/.fehbg &
+# pgrep -x sxhkd > /dev/null || sxhkd &
+# pgrep -x pipewire > /dev/null || pipewire &
+# pgrep -x redshift > /dev/null || redshift -PO 3200 &
 
-setxkbmap -layout us,th -model pc104 -option grp:caps_toggle
-xsetroot -cursor_name left_ptr
 
-bspc monitor -d I II III IV V VI
+# setxkbmap -layout us,th -model pc104 -option grp:caps_toggle
+# setxkbmap -option caps:escape &
+
+bspc monitor -d 1 2 3 4 5 6
 
 bspc config focused_border_color '#ffae00'
 bspc config border_width        2
-bspc config window_gap          2
+bspc config window_gap          5
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -27,7 +30,7 @@ bspc config pointer_action2 resize_side
 bspc config pointer_follows_focus false
 
 # Rule
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Firefox desktop='^1'
 bspc rule -a Soffice desktop='^2'
 bspc rule -a AppRun.wrapped desktop='^3'

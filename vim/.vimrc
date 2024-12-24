@@ -3,17 +3,19 @@ set encoding=utf-8 "enc
 set nobackup "nobk
 set nowritebackup "nowb
 set termguicolors "tgc
-" let loaded_matchparen = 1
+" let loaded_matchparen = 0
 
 call plug#begin()
-    Plug 'joshdick/onedark.vim'
-    Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-surround'
-    Plug 'christoomey/vim-tmux-navigator'
-    Plug 'takac/vim-hardtime'
-    Plug 'unblevable/quick-scope'
+    " Plug 'joshdick/onedark.vim'
+    " Plug 'tpope/vim-commentary'
+    " Plug 'tpope/vim-surround'
+    " Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+    " Plug 'christoomey/vim-tmux-navigator'
+    " Plug 'takac/vim-hardtime'
+    " Plug 'unblevable/quick-scope'
     Plug 'lifepillar/vim-mucomplete'
     Plug 'mbbill/undotree'
+    Plug 'baruchel/vim-notebook'
 call plug#end()
 
 if has('win64')
@@ -25,14 +27,17 @@ if has('win64')
 endif
 
 set background=dark "bg
-colorscheme onedark
-hi Normal guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
+colorscheme koehler
+"hi Normal guibg=NONE ctermbg=NONE
+"hi Terminal guibg=NONE ctermbg=NONE
+"hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-let g:hardtime_default_on = 1
-let g:hardtime_timeout = 5000
+let g:livepreview_cursorhold_recompile = 0
+
+let g:hardtime_default_on = 0
+let g:hardtime_timeout = 3000
 let g:hardtime_ignore_quickfix = 1
-let g:hardtime_allow_different_key = 1
+let g:hardtime_allow_different_key = 0
 let g:hardtime_maxcount = 1
 let g:hardtime_motion_with_count_resets = 1
 
@@ -48,12 +53,14 @@ set number "nu
 set relativenumber "rnu
 set cursorline "cul
 set signcolumn=yes "scl
+set laststatus=2 "ls
 set nowrap 
+set splitbelow "sb
+set splitright "sr
 set pumheight=10 "ph
 set completeopt=menuone,noselect
 
-set expandtab "et
-set smarttab "sta
+set expandtab "et set smarttab "sta
 set tabstop=4 "ts
 set shiftwidth=4 "sw
 
@@ -65,14 +72,13 @@ set nohlsearch "nohls
 set ignorecase "ic
 set smartcase "scs
 set incsearch "is
-
 set showmode "smd
 set showcmd "sc
 set showmatch "sm
 set scrolloff=10 "so
 set shortmess+=c "shm
 
-set grepprg=git\ grep\ -n "gp
+set grepprg=rg\ --vimgrep "gp
 set path+=**
 set wildmenu "wmnu
 set wildignorecase "wic
@@ -96,6 +102,8 @@ nnoremap <leader>e <cmd>Ex<cr>
 nnoremap <leader>ff <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
+nnoremap <leader>m <cmd>marks<cr>
+nnoremap <leader>j <cmd>jumps<cr>
 " nnoremap <leader>g <cmd>!fzf-tmux -p --reverse<cr>
 
 vnoremap J :m '>+1<cr>gv=gv

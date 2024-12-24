@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	wezterm
+	kitty
 
 # program launcher
 super + @space
@@ -13,6 +13,12 @@ super + @space
 # browser
 super + e
 	firefox
+
+# super + e
+# 	/opt/zen/zen
+
+@Print
+	flameshot gui
 
 #
 # bspwm hotkeys
