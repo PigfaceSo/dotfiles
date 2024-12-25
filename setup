@@ -1,0 +1,25 @@
+#!/bin/sh
+
+DOTFILES="$HOME"'/.dotfiles'
+XDG_CONFIG_HOME="$HOME"'/.config'
+
+if [[ ! -d ${XDG_CONFIG_HOME} ]]; then
+    mkdir ${XDG_CONFIG_HOME}
+fi
+
+sudo ln -s ${DOTFILES}/resolution.sh /usr/local/bin
+
+ln -s ${DOTFILES}/.xinitrc $HOME
+ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
+ln -s ${DOTFILES}/bash/.bash_profile $HOME
+ln -s ${DOTFILES}/bash/.bashrc $HOME
+ln -s ${DOTFILES}/vim/.vimrc $HOME
+
+ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/picom/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/kitty/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/wezterm/ ${XDG_CONFIG_HOME}
