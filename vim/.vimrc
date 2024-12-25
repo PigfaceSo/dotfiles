@@ -53,7 +53,7 @@ set number "nu
 set relativenumber "rnu
 set cursorline "cul
 set signcolumn=yes "scl
-set laststatus=2 "ls
+set laststatus=0 "ls
 set nowrap 
 set splitbelow "sb
 set splitright "sr
