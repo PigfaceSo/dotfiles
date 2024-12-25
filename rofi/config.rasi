@@ -18,7 +18,7 @@ configuration {
   background-color: Black;
   border-color: White;
   text-color: White;
-  font: "Itim 11";
+  font: "Itim 14";
 }
 
 window {
