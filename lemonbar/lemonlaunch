@@ -1,0 +1,6 @@
+#!/bin/sh
+
+killall -q lemonbar
+killall -q lemonconfig
+
+~/.config/lemonbar/lemonconfig | lemonbar -p | sh
