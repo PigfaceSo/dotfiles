@@ -1,10 +1,17 @@
 #!/bin/sh
 
+echo "====== Dotfile Setup ======"
+
 DOTFILES="$HOME"'/.dotfiles'
 XDG_CONFIG_HOME="$HOME"'/.config'
 
-if [[ ! -d ${XDG_CONFIG_HOME} ]]; then
+if [ ! -d ${XDG_CONFIG_HOME} ]; then
     mkdir ${XDG_CONFIG_HOME}
+fi
+
+# Delete default config bash files
+if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile ]; then
+    rm $HOME/.bash_profile $HOME/.bashrc
 fi
 
 sudo ln -s ${DOTFILES}/resolution.sh /usr/local/bin
@@ -23,3 +30,6 @@ ln -s ${DOTFILES}/kitty/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/wezterm/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
+
+echo "====== Done ======"
