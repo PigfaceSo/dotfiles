@@ -4,21 +4,25 @@
 
 # terminal emulator
 super + Return
-	kitty
+  st
 
 # program launcher
 super + @space
-	rofi -show drun
+  dmenu_run
 
 # browser
 super + e
 	firefox
 
-# super + e
-# 	/opt/zen/zen
-
 @Print
-	flameshot gui
+	ksnip
+
+XF86AudioRaiseVolume
+    amixer set Master 2%+
+XF86AudioLowerVolume
+    amixer set Master 2%-
+XF86AudioMute
+    amixer set Master {mute,unmute}
 
 #
 # bspwm hotkeys

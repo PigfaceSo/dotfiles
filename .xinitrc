@@ -14,7 +14,7 @@ pgrep -x pipewire > /dev/null || pipewire &
 
 # pgrep -x redshift > /dev/null || redshift -PO 3200 &
 
-~/.config/lemonbar/lemonlaunch &
+# ~/.config/lemonbar/lemonlaunch &
 
 # pgrep -x polybar > /dev/null || polybar top &
 

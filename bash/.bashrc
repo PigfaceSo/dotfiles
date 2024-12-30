@@ -3,9 +3,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-source ~/git-prompt.sh
+[[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
+[[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
 
+# set vi mode on bash
+# set -o vi
 
+# History
+HISTSIZE=1000
+HISTFILESIZE=5000
+HISTCONTROL=ignoreboth
+HISTTIMEFORMAT="%Y-%m-%d %T "
+
+# Profile
 PROMPT_COMMAND='BAT=$(cat /sys/class/power_supply/BAT0/capacity);'
 PROMPT_COMMAND="$PROMPT_COMMAND"'GIT=$(__git_ps1 "󰊢 %s ")'
 PS1='[ \w ] '
@@ -18,36 +28,15 @@ PS1="$PS1"'\[\e[0m\]'
 PS1="$PS1"'\n'
 PS1="$PS1"'\$ '
 
-eval "$(zoxide init --cmd cd bash)"
-# eval "$(atuin init bash)"
-eval "$(fzf --bash)"
-
-alias vim="vim-x11"
+# Alias
+alias vim="nvim"
 alias cc="clear"
 alias ls="ls --color=auto"
-# alias ls="eza --icons=always"
-# alias grep="grep --color=auto"
-# alias jq="jq --color-output"
-alias nv="nvim"
+alias ll="ls --color=auto -l"
+alias grep="grep --color=auto"
+alias jq="jq --color-output"
 alias t="task"
-# alias t="dstask"
-# alias ga="git add"
-# alias gc="git commit"
-# alias gp="git push"
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/wonwow/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/wonwow/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/wonwow/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/wonwow/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
-
+[[ -f "/usr/bin/zoxide" ]] && eval "$(zoxide init --cmd cd bash)"
+[[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
+# eval "$(atuin init bash)"

@@ -1,8 +1,11 @@
 $include /etc/inputrc
 
 set bell-style none
-#set colored-stats On
-# set editing-mode vi
-# set show-mode-in-prompt on
+# set colored-stats On
+set editing-mode vi
+set show-mode-in-prompt on
+
+set vi-cmd-mode-string "(c) "
+set vi-ins-mode-string "(i) "
 
 # set completion-ignore-case On
