@@ -21,5 +21,4 @@ pgrep -x pipewire > /dev/null || pipewire &
 
 ~/.fehbg &
 
-
 exec bspwm

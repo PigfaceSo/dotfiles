@@ -4,9 +4,14 @@ echo "====== Dotfile Setup ======"
 
 DOTFILES="$HOME"'/.dotfiles'
 XDG_CONFIG_HOME="$HOME"'/.config'
+URXVT_HOME="$HOME"'/.urxvt'
 
 if [ ! -d ${XDG_CONFIG_HOME} ]; then
     mkdir ${XDG_CONFIG_HOME}
+fi
+
+if [ ! -d ${URXVT_HOME} ]; then
+    mkdir -p ${URXVT_HOME}
 fi
 
 # Delete default config bash files
@@ -25,6 +30,7 @@ ln -s ${DOTFILES}/bash/.bashrc $HOME
 ln -s ${DOTFILES}/bash/.inputrc $HOME
 ln -s ${DOTFILES}/vim/.vimrc $HOME
 
+ln -s ${DOTFILES}/urxvt/ ${URXVT_HOME}/ext
 ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/picom/ ${XDG_CONFIG_HOME}
