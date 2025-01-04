@@ -8,5 +8,5 @@ padding.y = 6
 decorations = "Buttonless"
 
 [font]
-normal.family = "JetBrainsMonoNL Nerd Font"
-size = 8
+normal.family = "Terminess Nerd Font Mono"
+size = 9

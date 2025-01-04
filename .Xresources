@@ -1,0 +1,54 @@
+*.font: xft:Terminess Nerd Font:style=Regular:autohint=true:size=9
+
+!! Colors
+!
+
+*.foreground: #FFFFFF
+*.background: #000000
+
+!! Xft
+!
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.autohint: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcdfilter
+
+!! Xterm terminal
+!
+XTerm*renderFont: true
+XTerm*faceName: xft:Terminess Nerd Font
+XTerm*faceSize: 9
+XTerm*utf8: 2
+XTerm*locale: true
+
+!! URxvt terminal
+!
+
+URxvt.font: xft:Terminess Nerd Font Mono:style=Regular:autohint=true:pixelsize=12
+URxvt.geometry: 400x400
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.internalBorder: 10
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.depth: 24
+
+URxvt.perl-ext-common: eval,resize-font,url-select,matcher
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control--: resize-font:smaller
+URxvt.keysym.Shift-Control-+: resize-font:bigger
+URxvt.url-launcher: firefox
+URxvt.matcher.button: C-1
+
+!! Xcursor
+!
+
+Xcursor.theme: miku-cursor-linux
+Xcursor.size: 16

@@ -14,9 +14,11 @@ if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile ]; then
     rm $HOME/.bash_profile $HOME/.bashrc
 fi
 
-sudo ln -s ${DOTFILES}/resolution.sh /usr/local/bin
+sudo ln -s ${DOTFILES}/scripts/resolution.sh /usr/local/bin
+sudo ln -s ${DOTFILES}/scripts/screenshot.sh /usr/local/bin
 
 ln -s ${DOTFILES}/.xinitrc $HOME
+ln -s ${DOTFILES}/.Xresources $HOME
 ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
 ln -s ${DOTFILES}/bash/.bash_profile $HOME
 ln -s ${DOTFILES}/bash/.bashrc $HOME
@@ -33,5 +35,6 @@ ln -s ${DOTFILES}/alacritty/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/betterlockscreen/ ${XDG_CONFIG_HOME}
 
 echo "====== Done ======"

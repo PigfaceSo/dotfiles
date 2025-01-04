@@ -1,9 +1,10 @@
 configuration {
-  modi: "window,run,drun,ssh,emoji";
+  modi: "window,run,drun,ssh";
   display-drun: "  ";
   display-window: "  ";
   display-run: "  ";
   display-ssh: "  ";
+  display-dmenu: "  ";
   display-emoji: "  ";
   drun-display-format: "{name}";
   drun-match-fields: "name";
@@ -18,7 +19,7 @@ configuration {
   background-color: Black;
   border-color: White;
   text-color: White;
-  font: "Itim 14";
+  font: "Terminess Nerd Font 11";
 }
 
 window {

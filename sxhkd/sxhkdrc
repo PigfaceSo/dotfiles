@@ -4,18 +4,21 @@
 
 # terminal emulator
 super + Return
-  st
+  urxvtc
 
 # program launcher
 super + @space
-  dmenu_run
+  rofi -show drun
 
 # browser
 super + e
 	firefox
 
 @Print
-	ksnip
+	screenshot.sh
+
+super + x
+  betterlockscreen -l blur
 
 XF86AudioRaiseVolume
     amixer set Master 2%+
