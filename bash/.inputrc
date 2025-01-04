@@ -8,4 +8,4 @@ set show-mode-in-prompt on
 set vi-cmd-mode-string "(C) "
 set vi-ins-mode-string "(I) "
 
-set completion-ignore-case On
+# set completion-ignore-case On

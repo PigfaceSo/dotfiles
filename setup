@@ -27,6 +27,7 @@ ln -s ${DOTFILES}/.Xresources $HOME
 ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
 ln -s ${DOTFILES}/bash/.bash_profile $HOME
 ln -s ${DOTFILES}/bash/.bashrc $HOME
+ln -s ${DOTFILES}/bash/.bash_aliases $HOME
 ln -s ${DOTFILES}/bash/.inputrc $HOME
 ln -s ${DOTFILES}/vim/.vimrc $HOME
 
