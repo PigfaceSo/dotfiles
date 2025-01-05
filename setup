@@ -11,7 +11,7 @@ if [ ! -d ${XDG_CONFIG_HOME} ]; then
 fi
 
 if [ ! -d ${URXVT_HOME} ]; then
-    mkdir -p ${URXVT_HOME}
+    mkdir ${URXVT_HOME}
 fi
 
 # Delete default config bash files
@@ -31,7 +31,9 @@ ln -s ${DOTFILES}/bash/.bash_aliases $HOME
 ln -s ${DOTFILES}/bash/.inputrc $HOME
 ln -s ${DOTFILES}/vim/.vimrc $HOME
 
-ln -s ${DOTFILES}/urxvt/ ${URXVT_HOME}/ext
+if [ ! -e ${URXVT_HOME}/ext ]; then
+  ln -s ${DOTFILES}/urxvt/ ${URXVT_HOME}/ext
+fi
 ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/picom/ ${XDG_CONFIG_HOME}
