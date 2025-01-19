@@ -14,7 +14,6 @@ int main(int argc,char **argv){
   printf("%s",Date());
   printf("%%{c}");
 
-  // system("ls
   printf("\n");
   return 0;
 }

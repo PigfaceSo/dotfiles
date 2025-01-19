@@ -2,8 +2,10 @@
 
 # resolution.sh
 
-xsetroot -cursor_name left_ptr
-setxkbmap -layout us,th -model pc104 -option grp:caps_toggle
+xsetroot -cursor_name left_ptr &
+setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
+
+xrdb -merge ~/.Xresources &
 
 urxvtd -q &
 

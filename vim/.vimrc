@@ -5,6 +5,10 @@ set nowritebackup "nowb
 set termguicolors "tgc
 " let loaded_matchparen = 0
 
+if has("gui_running")
+  set guifont=Terminess\ Nerd\ Font\ Bold\ 9
+endif
+
 call plug#begin()
     " Plug 'joshdick/onedark.vim'
     " Plug 'tpope/vim-commentary'
@@ -27,7 +31,7 @@ if has('win64')
 endif
 
 set background=dark "bg
-colorscheme koehler
+colorscheme retrobox
 "hi Normal guibg=NONE ctermbg=NONE
 "hi Terminal guibg=NONE ctermbg=NONE
 "hi EndOfBuffer guibg=NONE ctermbg=NONE

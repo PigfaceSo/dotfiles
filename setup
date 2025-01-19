@@ -38,10 +38,12 @@ ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/picom/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/kitty/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/wezterm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/alacritty/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/betterlockscreen/ ${XDG_CONFIG_HOME}
