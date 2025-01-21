@@ -12,13 +12,24 @@ super + @space
 
 # browser
 super + e
-	firefox
+	/usr/bin/dbus-run-session /usr/bin/firefox
 
+super + r
+  alacritty --class programs -e $(echo -e " \ 
+      pulsemixer\n \ 
+      mc\n \
+      htop" \
+      | rofi -dmenu \ 
+      )
+
+# Screenshot
 @Print
 	screenshot.sh
 
+# Lock screen
 super + x
   betterlockscreen -l blur
+
 
 XF86AudioRaiseVolume
     amixer set Master 2%+

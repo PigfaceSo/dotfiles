@@ -1,19 +1,21 @@
 #! /bin/sh
 
-# pgrep -x picom > /dev/null || picom &
-# pgrep -x nm-applet > /dev/null || nm-applet &
+# StartUp session
+# 
 
-# pgrep -x nm-tray > /dev/null || nm-tray &
-# pgrep -x polybar > /dev/null || polybar --reload top &
-# pgrep -x flameshot > /dev/null || flameshot &
+~/.fehbg &
+xsetroot -cursor_name left_ptr &
+setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
+xrdb -merge ~/.Xresources &
 
-# pgrep -x sxhkd > /dev/null || sxhkd &
-# pgrep -x pipewire > /dev/null || pipewire &
-# pgrep -x redshift > /dev/null || redshift -PO 3200 &
+pgrep -x urxvtd > /dev/null ||  urxvtd -q &
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x pipewire > /dev/null || /usr/bin/dbus-run-session pipewire &
+pgrep -x redshift > /dev/null || redshift -PO 3200 &
 
 
-# setxkbmap -layout us,th -model pc104 -option grp:caps_toggle
-# setxkbmap -option caps:escape &
+# bspwm config
+#
 
 bspc monitor -d 1 2 3 4 5 6
 
@@ -42,3 +44,5 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Lxappearance state=floating
 bspc rule -a ksnip state=floating rectangle=300x300+0+0
+bspc rule -a programs state=floating sticky=on
+bspc rule -a copyq state=floating sticky=on

@@ -19,7 +19,7 @@ call plug#begin()
     " Plug 'unblevable/quick-scope'
     Plug 'lifepillar/vim-mucomplete'
     Plug 'mbbill/undotree'
-    Plug 'baruchel/vim-notebook'
+    " Plug 'baruchel/vim-notebook'
 call plug#end()
 
 if has('win64')

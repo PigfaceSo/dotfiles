@@ -22,11 +22,8 @@ pgrep -x pipewire > /dev/null || pipewire &
 
 # foot terminal server for use with footclient
 pgrep -x foot > /dev/null || foot --server &
-# pgrep -x urxvtd > /dev/null || urxvtd -q &
 
 pgrep -x wlsunset > /dev/null || wlsunset &
-
-xrdb -merge ~/.Xresources &
 
 # [Input]
 #
@@ -40,13 +37,16 @@ riverctl input pointer-1267-12375-ELAN1300:00_04F3:3057_Touchpad tap enabled &
 # [Keybinds]
 #
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
-riverctl map normal Super Return spawn "footclient"
+riverctl map normal Super Return spawn "/usr/bin/footclient"
 
 # Super+Space to toggle rofi
-riverctl map normal Super Space spawn "tofi-drun --drun-launch=true"
+riverctl map normal Super Space spawn "/usr/bin/tofi-drun --drun-launch=true"
 
 # Super+E to open browser
-riverctl map normal Super E spawn firefox
+riverctl map normal Super E spawn "/usr/bin/dbus-run-session /usr/bin/firefox"
+
+# Super+V to open Volume Control
+riverctl map normal Super V spawn "pulsemixer"
 
 # Super+W to close the focused view
 riverctl map normal Super W close
@@ -55,7 +55,7 @@ riverctl map normal Super W close
 riverctl map normal Super+Shift Q exit
 
 # Super+X to lock screen
-riverctl map normal Super X spawn "swaylock -s fill -i $HOME/Pictures/wallpaper/png/7.png"
+riverctl map normal Super X spawn "/usr/bin/swaylock -s fill -i $HOME/Pictures/wallpaper/png/7.png"
 
 # Super+{J,K,H,L} to move focus view
 riverctl map normal Super J focus-view down

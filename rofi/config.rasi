@@ -19,7 +19,7 @@ configuration {
   background-color: Black;
   border-color: White;
   text-color: White;
-  font: "Terminess Nerd Font 11";
+  font: "Terminess Nerd Font 9";
 }
 
 window {

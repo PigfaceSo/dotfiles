@@ -42,6 +42,7 @@ ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/kitty/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/wezterm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/alacritty/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/wayst/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
