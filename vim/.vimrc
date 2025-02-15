@@ -1,64 +1,65 @@
-syntax on
+syntax enable
 set encoding=utf-8 "enc
 set nobackup "nobk
 set nowritebackup "nowb
 set termguicolors "tgc
+
+" let b:did_ftplugin = 1 " Disable ftplugin
 " let loaded_matchparen = 0
 
-if has("gui_running")
-  set guifont=Terminess\ Nerd\ Font\ Bold\ 9
-endif
-
 call plug#begin()
-    " Plug 'joshdick/onedark.vim'
     " Plug 'tpope/vim-commentary'
+    " Plug 'unblevable/quick-scope'
+    " Plug 'lifepillar/vim-mucomplete'
+    " Plug 'mbbill/undotree'
+    " Plug 'lervag/vimtex'
+    " Plug 'altercation/vim-colors-solarized'
+    " Plug 'joshdick/onedark.vim'
+    " Plug 'ctrlpvim/ctrlp.vim'
     " Plug 'tpope/vim-surround'
-    " Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     " Plug 'christoomey/vim-tmux-navigator'
     " Plug 'takac/vim-hardtime'
-    " Plug 'unblevable/quick-scope'
-    Plug 'lifepillar/vim-mucomplete'
-    Plug 'mbbill/undotree'
     " Plug 'baruchel/vim-notebook'
 call plug#end()
 
-if has('win64')
-    let &t_SI = "\e[2 q"
-    let &t_EI = "\e[2 q"
-    set belloff=all
-    set backspace=2
-    let g:undotree_DiffCommand="fc"
+
+" let &t_SI = "\e[6 q"  " Set vertical bar in insert mode
+" let &t_EI = "\e[2 q"  " Set block cursor in normal mode
+
+if has("gui_running")
+    set guifont=Terminess\ Nerd\ Font\ Mono\ Bold\ 9
+    set background=light "bg
+else
+    set background=dark "bg
 endif
+" colorscheme solarized
+" hi Normal guibg=NONE ctermbg=NONE
+" hi Terminal guibg=NONE ctermbg=NONE
+" hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-set background=dark "bg
-colorscheme retrobox
-"hi Normal guibg=NONE ctermbg=NONE
-"hi Terminal guibg=NONE ctermbg=NONE
-"hi EndOfBuffer guibg=NONE ctermbg=NONE
-
-let g:livepreview_cursorhold_recompile = 0
-
-let g:hardtime_default_on = 0
-let g:hardtime_timeout = 3000
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_allow_different_key = 0
-let g:hardtime_maxcount = 1
-let g:hardtime_motion_with_count_resets = 1
-
+" Quick scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" Undotree
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_SplitWidth = 20
 
+" Mucomplete
 let g:mucomplete#enable_auto_at_startup = 1
 let g:mucomplete#completion_delay = 0
 
+" vimtex
+
+let g:vimtex_view_method = 'sioyek'
+" let g:vimtex_view_general_viewer = 'okular'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+
 set number "nu
 set relativenumber "rnu
-set cursorline "cul
-set signcolumn=yes "scl
+" set cursorline "cul
+set signcolumn=no "scl
 set laststatus=0 "ls
-set nowrap 
+set nowrap
 set splitbelow "sb
 set splitright "sr
 set pumheight=10 "ph
@@ -71,6 +72,8 @@ set shiftwidth=4 "sw
 set autoindent "ai
 set smartindent "si
 set cindent "ci
+set list
+set listchars=tab:\ \ ,multispace:·,trail:·
 
 set nohlsearch "nohls
 set ignorecase "ic
@@ -103,12 +106,11 @@ nnoremap <C-u> <C-u>zz
 nnoremap H <cmd>bprevious<cr>
 nnoremap L <cmd>bnext<cr>
 nnoremap <leader>e <cmd>Ex<cr>
-nnoremap <leader>ff <cmd>FZF<cr>
+nnoremap <leader><leader> <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>buffers<cr>:b<space>
 nnoremap <leader>u <cmd>UndotreeToggle<cr>
 nnoremap <leader>m <cmd>marks<cr>
 nnoremap <leader>j <cmd>jumps<cr>
-" nnoremap <leader>g <cmd>!fzf-tmux -p --reverse<cr>
 
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv

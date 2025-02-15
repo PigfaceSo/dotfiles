@@ -2,14 +2,16 @@
 
 # resolution.sh
 
+# Mouse/Touchpad & Keyboard settings
+xsetroot -cursor_name left_ptr &
+setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
 
-# ~/.config/lemonbar/lemonlaunch &
-# pgrep -x polybar > /dev/null || polybar top &
-# pgrep -x eww > /dev/null || eww daemon &
-# eww open bar &
+# AutoStart
+# killall pipewire || /usr/bin/dbus-run-session pipewire &
+# killall redshift || redshift -PO 2200 &
 
 # wal -i ~/Pictures/wallpaper/png/7.png &
 
 # ~/.fehbg &
 
-exec bspwm
+exec icewm-session

@@ -19,8 +19,8 @@ if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile ]; then
     rm $HOME/.bash_profile $HOME/.bashrc
 fi
 
-sudo ln -s ${DOTFILES}/scripts/resolution.sh /usr/local/bin
-sudo ln -s ${DOTFILES}/scripts/screenshot.sh /usr/local/bin
+# sudo ln -s ${DOTFILES}/scripts/resolution.sh /usr/local/bin
+# sudo ln -s ${DOTFILES}/scripts/screenshot.sh /usr/local/bin
 
 ln -s ${DOTFILES}/.xinitrc $HOME
 ln -s ${DOTFILES}/.Xresources $HOME

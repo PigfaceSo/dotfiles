@@ -20,7 +20,7 @@ Xft.lcdfilter: lcdfilter
 !! Xterm terminal
 !
 XTerm*renderFont: true
-XTerm*faceName: xft:Terminess Nerd Font
+XTerm*faceName: xft:Terminess Nerd Font Mono
 XTerm*faceSize: 9
 XTerm*utf8: 2
 XTerm*locale: true
@@ -29,7 +29,7 @@ XTerm*locale: true
 !
 
 URxvt.font: xft:Terminess Nerd Font Mono:style=Regular:autohint=true:pixelsize=12
-URxvt.geometry: 400x400
+URxvt.geometry: 70x30
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
