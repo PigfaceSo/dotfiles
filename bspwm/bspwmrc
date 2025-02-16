@@ -18,8 +18,8 @@ xrdb -merge ~/.Xresources &
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x pipewire > /dev/null || /usr/bin/dbus-run-session pipewire &
 pgrep -x copyq > /dev/null || copyq --start-server && copyq hide &
+pgrep -x redshift > /dev/null || redshift -PO 3000 &
 # pgrep -x urxvtd > /dev/null || urxvtd -q &
-# pgrep -x redshift > /dev/null || redshift -PO 3200 &
 
 
 # bspwm config

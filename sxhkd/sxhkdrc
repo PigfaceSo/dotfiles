@@ -26,9 +26,7 @@ super + v
 
 # Screenshot
 @Print
-	screenshot.sh
-
-
+	flameshot gui
 
 XF86AudioRaiseVolume
     amixer set Master 2%+

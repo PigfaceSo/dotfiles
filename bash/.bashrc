@@ -3,16 +3,23 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+####################
+##    Load File   ##
+####################
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
 
-# History
-HISTSIZE=1000
-HISTFILESIZE=5000
-HISTCONTROL=ignoreboth
-HISTTIMEFORMAT="%Y-%m-%d %T "
+####################
+##    History     ##
+####################
+export HISTSIZE=1000
+export HISTFILESIZE=5000
+export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT="%Y-%m-%d %T "
 
-# Profile
+####################
+##    Profile     ##
+####################
 PROMPT_COMMAND='BAT=$(cat /sys/class/power_supply/BAT0/capacity);'
 PROMPT_COMMAND="$PROMPT_COMMAND"'DATE=$(date +%F\ \|\ %R);'
 PROMPT_COMMAND="$PROMPT_COMMAND"'GIT=$(__git_ps1 "\e[38;5;153;1mgit:\e[0m\e[38;5;214;1m(%s)\e[0m")'
@@ -29,6 +36,23 @@ PS1="$PS1"'\[\e[0m\]'
 PS1="$PS1"'\n'
 PS1="$PS1"'\$ '
 
+####################
+##  Load Command  ##
+####################
 [[ -f "/usr/bin/zoxide" ]] && eval "$(zoxide init --cmd cd bash)"
 [[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
 # eval "$(atuin init bash)"
+
+####################
+##    Alias       ##
+####################
+TERMNAME="alacritty"
+[[ -f "/usr/bin/jq" ]] && alias jq="jq --color-output"
+[[ -f "/usr/bin/nvim" ]] && alias v="nvim" && alias vim="nvim"
+alias cc="clear"
+alias ls="ls --color=auto"; [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
+alias ll="ls -alF"
+alias grep="grep --color=auto"
+alias node-redd="pgrep -x node-red > /dev/null && pkill node-red; nohup node-red -v > ~/node-red.log &"
+alias mosquittod="pgrep -x mosquitto > /dev/null && pkill mosquitto; echo -e 'allow_anonymous true\nlistener 1883 $(ip -4 -o address show wlp2s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')' > ~/mosquitto.conf; nohup mosquitto -c ~/mosquitto.conf -v > ~/mosquitto.log &"
+alias ardc="pgrep -x arduino-cli > /dev/null && pkill arduino-cli; ${TERMNAME} -e sh -c 'arduino-cli compile -u' && ${TERMNAME} -e sh -c 'arduino-cli monitor --timestamp' &"
