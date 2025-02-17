@@ -9,7 +9,7 @@ decorations = "Buttonless"
 
 [font]
 normal.family = "Terminess Nerd Font Mono"
-size = 9
+size = 10.5
 
 [cursor]
 style.shape = "Block"
