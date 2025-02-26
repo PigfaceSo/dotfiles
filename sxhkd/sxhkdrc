@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    alacritty
+    uxterm
 
 # program launcher
 super + @space
@@ -15,7 +15,7 @@ super + e
 	/usr/bin/dbus-run-session /usr/bin/firefox
 
 super + r
-  alacritty --class programs -e $(ls /usr/bin | rofi -dmenu)
+    uxterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 
 # Lock screen
 super + x

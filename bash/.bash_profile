@@ -8,6 +8,7 @@ WM_WAYLAND="river"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export TERMINAL="terminator"
 export BROWSER="firefox"
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1

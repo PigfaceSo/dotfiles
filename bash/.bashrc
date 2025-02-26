@@ -12,10 +12,10 @@
 ####################
 ##    History     ##
 ####################
-export HISTSIZE=1000
-export HISTFILESIZE=5000
-export HISTCONTROL=ignoreboth
-export HISTTIMEFORMAT="%Y-%m-%d %T "
+export HISTSIZE=9999
+export HISTFILESIZE=9999
+export HISTCONTROL=erasedups
+# export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ####################
 ##    Profile     ##
@@ -40,8 +40,8 @@ PS1="$PS1"'\$ '
 ##  Load Command  ##
 ####################
 [[ -f "/usr/bin/zoxide" ]] && eval "$(zoxide init --cmd cd bash)"
-[[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
-# eval "$(atuin init bash)"
+# [[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
+# [[ -f "/usr/bin/atuin" ]] && eval "$(atuin init bash)"
 
 ####################
 ##    Alias       ##

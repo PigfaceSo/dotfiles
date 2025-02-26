@@ -1,34 +1,68 @@
-*.font: xft:Terminess Nerd Font:style=Regular:autohint=true:size=9
-
-!! Colors
-!
-*.foreground: #FFFFFF
-*.background: #000000
-
-!! Xft
-!
-
-Xft.dpi: 96
-Xft.antialias: true
-Xft.autohint: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcdfilter
-
 !! Xterm terminal
 !
-XTerm*renderFont: true
+
+XTerm*termName: xterm-256color
+XTerm*foreground: white
+XTerm*background: black
+XTerm*VT100.geometry: 80x40
 XTerm*faceName: xft:Terminess Nerd Font Mono
 XTerm*faceSize: 9
-XTerm*utf8: 2
-XTerm*locale: true
+
+XTerm*internalBorder: 10
+
+XTerm*VT100.scrollBar: false
+XTerm*scrollKey: true
+XTerm*scrollTtyOutput: true
+XTerm*saveLines: 15000
+
+XTerm*cursorBlink: true
+
+XTerm*highlightSelection: true
+XTerm*trimSelection: true
+XTerm*selectionToClipboard: true
+
+XTerm*VT100.translations: #override \n\
+    Ctrl <Key>-: smaller-vt-font() \n\
+    Ctrl <Key>+: larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
+
+!! UXTerm
+!
+
+UXTerm*termName: xterm-256color
+UXTerm*foreground: white
+UXTerm*background: black
+UXTerm*faceName: xft:Terminess Nerd Font Mono
+UXTerm*faceSize: 9
+
+UXTerm*VT100.geometry: 80x40
+UXTerm*internalBorder: 10
+
+UXTerm*VT100.scrollBar: false
+UXTerm*scrollKey: true
+UXTerm*scrollTtyOutput: false
+UXTerm*saveLines: 15000
+
+UXTerm*cursorBlink: true
+
+UXTerm*highlightSelection: true
+UXTerm*trimSelection: true
+UXTerm*selectionToClipboard: true
+
+UXTerm*VT100.translations: #override \n\
+    Ctrl <Key>-: smaller-vt-font() \n\
+    Ctrl <Key>+: larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
 
 !! URxvt terminal
 !
 
 URxvt.font: xft:Terminess Nerd Font Mono:style=Regular:autohint=true:pixelsize=12
-URxvt.geometry: 70x30
+URxvt.geometry: 100x40
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
@@ -49,5 +83,5 @@ URxvt.matcher.button: C-1
 !! Xcursor
 !
 
-Xcursor.theme: miku-cursor-linux
-Xcursor.size: 16
+/*Xcursor.theme: miku-cursor-linux*/
+/*Xcursor.size: 16*/
