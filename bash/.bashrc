@@ -15,6 +15,7 @@
 export HISTSIZE=9999
 export HISTFILESIZE=9999
 export HISTCONTROL=erasedups
+export HISTIGNORE="*-h:*--help:*--help-all:cd*:history*:ls*:cc:clear:pwd:exit:whoami:man*:date:cal*:mount:unmount:ss*"
 # export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ####################
@@ -52,6 +53,7 @@ TERMNAME="alacritty"
 alias cc="clear"
 alias ls="ls --color=auto"; [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
 alias ll="ls -alF"
+[[ -f "/usr/bin/tmux" ]] && alias t="tmux"
 alias grep="grep --color=auto"
 alias node-redd="pgrep -x node-red > /dev/null && pkill node-red; nohup node-red -v > ~/node-red.log &"
 alias mosquittod="pgrep -x mosquitto > /dev/null && pkill mosquitto; echo -e 'allow_anonymous true\nlistener 1883 $(ip -4 -o address show wlp2s0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')' > ~/mosquitto.conf; nohup mosquitto -c ~/mosquitto.conf -v > ~/mosquitto.log &"
