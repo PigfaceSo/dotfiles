@@ -1,4 +1,5 @@
 # Dotfiles
 
-- **WM:** icewm
-- **Terminal:** xterm
+- **Display:**  X11
+- **WM:**  icewm
+- **Terminal:**  xterm
