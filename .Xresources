@@ -27,36 +27,6 @@ XTerm*VT100.translations: #override \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
     Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
 
-!! UXTerm
-!
-
-UXTerm*termName: xterm-256color
-UXTerm*foreground: white
-UXTerm*background: black
-UXTerm*faceName: xft:Terminess Nerd Font Mono
-UXTerm*faceSize: 9
-
-UXTerm*VT100.geometry: 80x40
-UXTerm*internalBorder: 20
-
-UXTerm*VT100.scrollBar: false
-UXTerm*scrollKey: true
-UXTerm*scrollTtyOutput: false
-UXTerm*saveLines: 15000
-
-UXTerm*cursorBlink: true
-
-UXTerm*highlightSelection: true
-UXTerm*trimSelection: true
-UXTerm*selectionToClipboard: true
-
-UXTerm*VT100.translations: #override \n\
-    Ctrl <Key>-: smaller-vt-font() \n\
-    Ctrl <Key>+: larger-vt-font() \n\
-    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
-
 !! URxvt terminal
 !
 
@@ -78,9 +48,3 @@ URxvt.keysym.Control--: resize-font:smaller
 URxvt.keysym.Shift-Control-+: resize-font:bigger
 URxvt.url-launcher: firefox
 URxvt.matcher.button: C-1
-
-!! Xcursor
-!
-
-/*Xcursor.theme: miku-cursor-linux*/
-/*Xcursor.size: 16*/

@@ -49,6 +49,7 @@ PS1="$PS1"'\$ '
 ####################
 TERMNAME="alacritty"
 [[ -f "/usr/bin/jq" ]] && alias jq="jq --color-output"
+[[ -f "/usr/bin/nnn" ]] && alias n="nnn"
 [[ -f "/usr/bin/nvim" ]] && alias v="nvim" && alias vim="nvim" || [[ -f "/usr/bin/vim" ]] && alias v="vim"
 [[ -f "/usr/bin/tmux" ]] && alias t="tmux"
 alias cc="clear"

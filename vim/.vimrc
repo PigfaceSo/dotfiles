@@ -7,6 +7,9 @@ set termguicolors "tgc
 " let b:did_ftplugin = 1 " Disable ftplugin
 " let loaded_matchparen = 0
 
+" Install Plugin
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 " call plug#begin()
     " Plug 'tpope/vim-commentary'
     " Plug 'unblevable/quick-scope'
@@ -32,7 +35,8 @@ if has("gui_running")
 else
     set background=dark "bg
 endif
-" colorscheme solarized
+
+" silent! colorscheme solarized
 " hi Normal guibg=NONE ctermbg=NONE
 " hi Terminal guibg=NONE ctermbg=NONE
 " hi EndOfBuffer guibg=NONE ctermbg=NONE
@@ -65,7 +69,8 @@ set splitright "sr
 set pumheight=10 "ph
 set completeopt=menuone,noselect
 
-set expandtab "et set smarttab "sta
+set expandtab "et
+set smarttab "sta
 set tabstop=4 "ts
 set shiftwidth=4 "sw
 
