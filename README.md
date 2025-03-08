@@ -1,1 +1,4 @@
-# My dotfiles use for linux
+# Dotfiles
+
+- **WM:** icewm
+- **Terminal:** xterm
