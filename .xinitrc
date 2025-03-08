@@ -3,7 +3,7 @@
 xrdb -merge ~/.Xresources &
 
 # Mouse/Touchpad & Keyboard settings
-# xsetroot -cursor_name left_ptr &
+xsetroot -cursor_name left_ptr &
 setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 
 # AutoStart
@@ -14,5 +14,4 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 
 # ~/.fehbg &
 
-# exec dbus-run-session icewm
 exec icewm
