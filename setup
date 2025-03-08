@@ -2,21 +2,16 @@
 
 echo "====== Dotfile Setup ======"
 
-DOTFILES="$HOME"'/.dotfiles'
+DOTFILES="$HOME"'/dotfiles'
 XDG_CONFIG_HOME="$HOME"'/.config'
-URXVT_HOME="$HOME"'/.urxvt'
 
 if [ ! -d ${XDG_CONFIG_HOME} ]; then
     mkdir ${XDG_CONFIG_HOME}
 fi
 
-if [ ! -d ${URXVT_HOME} ]; then
-    mkdir ${URXVT_HOME}
-fi
-
 # Delete default config bash files
-if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile ]; then
-    rm $HOME/.bash_profile $HOME/.bashrc
+if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile -o -e $HOME/.inputrc ]; then
+    rm $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc
 fi
 
 # sudo ln -s ${DOTFILES}/scripts/resolution.sh /usr/local/bin
@@ -27,24 +22,16 @@ ln -s ${DOTFILES}/.Xresources $HOME
 ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
 ln -s ${DOTFILES}/bash/.bash_profile $HOME
 ln -s ${DOTFILES}/bash/.bashrc $HOME
-# ln -s ${DOTFILES}/bash/.bash_aliases $HOME
 ln -s ${DOTFILES}/bash/.inputrc $HOME
 ln -s ${DOTFILES}/vim/.vimrc $HOME
 
-# if [ ! -e ${URXVT_HOME}/ext ]; then
-#   ln -s ${DOTFILES}/urxvt/ ${URXVT_HOME}/ext
-# fi
-ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/picom/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/kitty/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/wezterm/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/alacritty/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
+# ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/betterlockscreen/ ${XDG_CONFIG_HOME}
 

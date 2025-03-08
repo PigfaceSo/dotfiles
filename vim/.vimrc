@@ -7,7 +7,7 @@ set termguicolors "tgc
 " let b:did_ftplugin = 1 " Disable ftplugin
 " let loaded_matchparen = 0
 
-call plug#begin()
+" call plug#begin()
     " Plug 'tpope/vim-commentary'
     " Plug 'unblevable/quick-scope'
     " Plug 'lifepillar/vim-mucomplete'
@@ -20,7 +20,7 @@ call plug#begin()
     " Plug 'christoomey/vim-tmux-navigator'
     " Plug 'takac/vim-hardtime'
     " Plug 'baruchel/vim-notebook'
-call plug#end()
+" call plug#end()
 
 
 " let &t_SI = "\e[6 q"  " Set vertical bar in insert mode

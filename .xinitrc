@@ -1,17 +1,18 @@
 #!/bin/sh
 
-# resolution.sh
+xrdb -merge ~/.Xresources &
 
 # Mouse/Touchpad & Keyboard settings
 xsetroot -cursor_name left_ptr &
-setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
+setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 
 # AutoStart
-# killall pipewire || /usr/bin/dbus-run-session pipewire &
-# killall redshift || redshift -PO 2200 &
+# pgrep -x redshift > /dev/null || redshift -PO 2200 &
+# pgrep -x copyq > /dev/null || copyq && copyq hide &
 
 # wal -i ~/Pictures/wallpaper/png/7.png &
 
 # ~/.fehbg &
 
-exec icewm-session
+# exec dbus-run-session icewm
+exec openbox
