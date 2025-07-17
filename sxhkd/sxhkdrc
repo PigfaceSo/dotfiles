@@ -12,12 +12,12 @@ super + @space
 
 # browser
 super + e
-	/usr/bin/dbus-run-session /usr/bin/firefox
+	[ -f "/usr/bin/prime-run" ] && prime-run floorp || floorp
 
 super + r
     xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 
-# Lock screen
+# Lock screed
 super + x
     betterlockscreen -l blur
 
