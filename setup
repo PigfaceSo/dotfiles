@@ -21,13 +21,14 @@ ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
 ln -s ${DOTFILES}/bash/.bash_profile $HOME
 ln -s ${DOTFILES}/bash/.bashrc $HOME
 ln -s ${DOTFILES}/bash/.inputrc $HOME
-ln -s ${DOTFILES}/vim/.vimrc $HOME
+# ln -s ${DOTFILES}/vim/.vimrc $HOME
 
-# ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/tint2/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
-# ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
 # ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
