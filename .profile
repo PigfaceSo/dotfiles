@@ -2,10 +2,10 @@
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
-export EDITOR="vim" 
-export VISUAL="vim"
+export EDITOR="nvim" 
+export VISUAL="nvim"
 export TERMINAL="xterm"
-export BROWSER="firefox"
+export BROWSER="floorp"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -21,6 +21,6 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 #     fi
 # fi
 
-if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
-    exec startx
-fi
+# if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]]; then
+#    exec startx
+# fi
