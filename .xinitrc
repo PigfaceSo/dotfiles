@@ -14,4 +14,4 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 
 # ~/.fehbg &
 
-exec icewm
+exec bspwm
