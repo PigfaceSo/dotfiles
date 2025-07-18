@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export HISTSIZE=9999
 export HISTFILESIZE=9999
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="*-h:*--help:*--help-all:cd*:history*:ls*:cc:clear:pwd:exit:whoami:man*:date:cal*:mount:unmount"
+export HISTIGNORE="*-h:*--help*:history:clear:pwd:exit:whoami:date"
 # export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ####################
@@ -40,6 +40,9 @@ PS1="$PS1"'\$ '
 ####################
 ##  Load Command  ##
 ####################
+[[ -f "/usr/bin/python3" && ! -d "$HOME/gvenv" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/gvenv
+[[ -d "$HOME/gvenv" ]] && source $HOME/gvenv/bin/activate
+
 [[ -f "/usr/bin/zoxide" ]] && eval "$(zoxide init --cmd cd bash)"
 [[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
 # [[ -f "/usr/bin/atuin" ]] && eval "$(atuin init bash)"
@@ -47,9 +50,24 @@ PS1="$PS1"'\$ '
 ####################
 ##    Alias       ##
 ####################
-TERMNAME="alacritty"
 [[ -f "/usr/bin/jq" ]] && alias jq="jq --color-output"
 alias ls="ls --color=auto"; [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
 alias ip="ip -c=auto"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/wonwow/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
