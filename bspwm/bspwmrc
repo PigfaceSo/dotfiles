@@ -17,14 +17,13 @@ xrdb -merge ~/.Xresources &
 # AutoStart
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x pipewire > /dev/null || /usr/bin/dbus-run-session pipewire &
-pgrep -x wireplumber > /dev/null || /usr/bin/dbus-run-session wireplumber &
-pgrep -x pipewire-pulse > /dev/null || /usr/bin/dbus-run-session pipewire-pulse &
-# pgrep -x copyq > /dev/null || copyq && copyq hide &
-# pgrep -x redshift > /dev/null || redshift -PO 2000 &
-# pgrep -x ksnip > /dev/null || ksnip &
 pgrep -x tint2 > /dev/null || tint2 &
+pgrep -x keepassxc > /dev/null || keepassxc --minimized &
+pgrep -x copyq > /dev/null || copyq --start-server &
 
-# pgrep -x urxvtd > /dev/null || urxvtd -q &
+#pgrep -x redshift > /dev/null || redshift -PO 2000 &
+#pgrep -x ksnip > /dev/null || ksnip &
+#pgrep -x urxvtd > /dev/null || urxvtd -q &
 
 
 # bspwm config

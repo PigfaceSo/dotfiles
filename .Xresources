@@ -27,6 +27,32 @@ XTerm*VT100.translations: #override \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
     Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
 
+programs*termName: xterm-256color
+programs*foreground: white
+programs*background: black
+programs*VT100.geometry: 100x20
+programs*faceName: xft:Terminess Nerd Font Mono
+programs*faceSize: 9
+
+programs*internalBorder: 20
+programs*VT100.scrollBar: false
+programs*scrollKey: true
+programs*scrollTtyOutput: true
+programs*saveLines: 15000
+
+programs*cursorBlink: true
+
+programs*highlightSelection: true
+programs*trimSelection: true
+programs*selectionToClipboard: true
+
+programs*VT100.translations: #override \n\
+    Ctrl <Key>-: smaller-vt-font() \n\
+    Ctrl <Key>+: larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
+
 !! URxvt terminal
 !
 

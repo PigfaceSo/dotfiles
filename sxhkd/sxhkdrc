@@ -25,8 +25,11 @@ super + v
     copyq menu
 
 # Screenshot
-# @Print
-# 	flameshot gui
+@Print
+    scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png" --silent -s -f --line mode=edge -e 'xclip -sel clipboard -target image/png -i $f'
+
+shift + @Print
+    scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-fullscreen-screenshot.png" --silent -e 'xclip -sel clipboard -target image/png -i $f'
 
 XF86AudioRaiseVolume
     amixer set Master 2%+
