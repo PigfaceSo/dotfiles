@@ -14,6 +14,8 @@ if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile -o -e $HOME/.inputrc -o -e $HOME
     rm $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.profile
 fi
 
+sudo ln -s ${DOTFILES}/xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/
+
 ln -s ${DOTFILES}/.xinitrc $HOME
 ln -s ${DOTFILES}/.Xresources $HOME
 ln -s ${DOTFILES}/.profile $HOME
@@ -34,6 +36,5 @@ ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/betterlockscreen/ ${XDG_CONFIG_HOME}
 #ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
 #ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
-#ln -s ${DOTFILES}/lemonbar/ ${XDG_CONFIG_HOME}
 
 echo "====== Done ======"
