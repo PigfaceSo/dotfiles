@@ -26,7 +26,7 @@ super + v
 
 # Screenshot
 @Print
-    scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png" --silent -s -f --line mode=edge -e 'xclip -sel clipboard -target image/png -i $f'
+    scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png" --silent -s -f  -e 'xclip -sel clipboard -target image/png -i $f'
 
 shift + @Print
     scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-fullscreen-screenshot.png" --silent -e 'xclip -sel clipboard -target image/png -i $f'
@@ -37,6 +37,10 @@ XF86AudioLowerVolume
     amixer set Master 2%-
 XF86AudioMute
     amixer set Master {mute,unmute}
+XF86MonBrightnessUp
+    brightnessctl set +5%
+XF86MonBrightnessDown
+    brightnessctl set 5%-
 
 #
 # bspwm hotkeys

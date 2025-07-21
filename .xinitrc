@@ -14,4 +14,9 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 
 # ~/.fehbg &
 
-exec dbus-run-session bspwm
+# Start a D-Bus session if one is not running
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+  eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+exec bspwm

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vesktop
+Exec=/usr/bin/dbus-run-session /opt/vesktop/vesktop
+Icon=vesktop
+Type=Application
+Categories=Network;Chat;
+StartupNotify=true
+Terminal=false

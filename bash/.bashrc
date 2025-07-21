@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export HISTSIZE=9999
 export HISTFILESIZE=9999
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="*-h:*--help*:history:clear:pwd:exit:whoami:date"
+export HISTIGNORE="*-h:*--help*:ls:ls -la:ls -l:history:clear:pwd:exit:whoami:date"
 # export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ####################
@@ -71,3 +71,5 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+source -- ~/.local/share/blesh/ble.sh
+#[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
