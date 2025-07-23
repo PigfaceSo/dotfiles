@@ -8,7 +8,9 @@
 ####################
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
+source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
+
 ####################
 ##    History     ##
 ####################
@@ -55,21 +57,3 @@ alias ls="ls --color=auto"; [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
 alias ip="ip -c=auto"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/home/wonwow/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-source -- ~/.local/share/blesh/ble.sh
-#[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
