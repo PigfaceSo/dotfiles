@@ -42,8 +42,7 @@ PS1="$PS1"'\$ '
 ####################
 ##  Load Command  ##
 ####################
-[[ $TERM = "xterm-kitty" ]] && alias ssh="kitten ssh"
-[[ $TERM = "xterm-kitty" ]] && alias icat="kitten icat"
+[[ $TERM = "xterm-kitty" ]] && alias ssh="kitten ssh" && alias icat="kitten icat"
 [[ -f "/usr/bin/python3" && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
 [[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
 
