@@ -2,10 +2,12 @@
 !
 
 XTerm*termName: xterm-256color
+XTerm*decTerminalID: vt340
+XTerm*numColorRegisters: 256
 XTerm*foreground: white
 XTerm*background: black
 XTerm*VT100.geometry: 80x40
-XTerm*faceName: xft:Terminess Nerd Font Mono
+XTerm*faceName: xft:Hack Nerd Font Mono
 XTerm*faceSize: 9
 
 XTerm*internalBorder: 20
@@ -31,7 +33,7 @@ programs*termName: xterm-256color
 programs*foreground: white
 programs*background: black
 programs*VT100.geometry: 100x20
-programs*faceName: xft:Terminess Nerd Font Mono
+programs*faceName: xft:Hack Nerd Font Mono
 programs*faceSize: 9
 
 programs*internalBorder: 20
@@ -56,7 +58,7 @@ programs*VT100.translations: #override \n\
 !! URxvt terminal
 !
 
-URxvt.font: xft:Terminess Nerd Font Mono:style=Regular:autohint=true:pixelsize=12
+URxvt.font: xft:Hack Nerd Font Mono:style=Regular:autohint=true:pixelsize=12
 URxvt.geometry: 100x40
 URxvt.cursorBlink: true
 URxvt.scrollBar: false

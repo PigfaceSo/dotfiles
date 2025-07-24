@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    kitty
+    xterm # [ -f "/usr/bin/prime-run" ] && prime-run kitty || kitty
 
 # program launcher
 super + @space
@@ -15,7 +15,7 @@ super + e
 	[ -f "/usr/bin/prime-run" ] && prime-run floorp || floorp
 
 super + r
-    kitty --class programs -e $(ls /usr/bin | rofi -dmenu)
+    xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 
 # Lock screed
 super + x
