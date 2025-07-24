@@ -29,6 +29,7 @@ XTerm*VT100.translations: #override \n\
     Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
 
 programs*termName: xterm-256color
+programs*backarrowKey: false
 programs*foreground: white
 programs*background: black
 programs*VT100.geometry: 100x20
