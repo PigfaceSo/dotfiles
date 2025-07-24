@@ -2,8 +2,7 @@
 !
 
 XTerm*termName: xterm-256color
-XTerm*decTerminalID: vt340
-XTerm*numColorRegisters: 256
+XTerm*backarrowKey: false
 XTerm*foreground: white
 XTerm*background: black
 XTerm*VT100.geometry: 80x40
