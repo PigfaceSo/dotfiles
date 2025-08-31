@@ -1,5 +1,6 @@
 #!/bin/sh
 
+xset r rate 200 80 &
 xrdb -merge ~/.Xresources &
 
 # Mouse/Touchpad & Keyboard settings

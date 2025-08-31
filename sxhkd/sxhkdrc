@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    xterm # [ -f "/usr/bin/prime-run" ] && prime-run kitty || kitty
+    alacritty
 
 # program launcher
 super + @space
@@ -12,12 +12,12 @@ super + @space
 
 # browser
 super + e
-	[ -f "/usr/bin/prime-run" ] && prime-run floorp || floorp
+    /opt/floorp/floorp
 
 super + r
     xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 
-# Lock screed
+# Lock screen
 super + x
     betterlockscreen -l blur
 
@@ -32,11 +32,11 @@ shift + @Print
     scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-fullscreen-screenshot.png" --silent -e 'xclip -sel clipboard -target image/png -i $f'
 
 XF86AudioRaiseVolume
-    amixer set Master 2%+
+    pulsemixer --change-volume +2
 XF86AudioLowerVolume
-    amixer set Master 2%-
+    pulsemixer --change-volume -2
 XF86AudioMute
-    amixer set Master {mute,unmute}
+    pulsemixer --toggle-mute
 XF86MonBrightnessUp
     brightnessctl set +5%
 XF86MonBrightnessDown

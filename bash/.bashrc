@@ -8,9 +8,13 @@ shopt -s checkwinsize
 ####################
 ##    Load File   ##
 ####################
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
-[[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
+# [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
+# [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
 
 ####################
@@ -18,7 +22,7 @@ export PATH=$PATH:$HOME/.local/bin
 ####################
 export HISTSIZE=9999
 export HISTFILESIZE=9999
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTIGNORE="*-h:*--help*:ls:ls -la:ls -l:history:clear:pwd:exit:whoami:date"
 # export HISTTIMEFORMAT="%Y-%m-%d %T "
 
@@ -45,19 +49,32 @@ PS1="$PS1"'\$ '
 ##    Alias       ##
 ####################
 [[ -f "/usr/bin/jq" ]] && alias jq="jq --color-output"
-alias ls="ls --color=auto"; [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
+alias ls="ls --color=auto"
+# [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
+alias tree="ls --color=never --tree"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
 alias ip="ip -c=auto"
 
+alias klik_up="docker compose --project-directory ~/mysql_klik up -d"
+alias klik_down="docker compose --project-directory ~/mysql_klik down"
+alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
+alias djangowebsite="source ~/DjangoWebsite/venv/bin/activate"
+alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/vm/kali-linux-2025.2-qemu-amd64.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
+alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
 
 ####################
 ##  Load Command  ##
 ####################
 [[ $TERM = "xterm-kitty" ]] && alias ssh="kitten ssh" && alias icat="kitten icat"
-[[ -f "/usr/bin/python3" && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
+[[ -n $(command -v python3) && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
 [[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
 
-[[ -f "/usr/bin/zoxide" ]] && eval "$(zoxide init --cmd cd bash)"
-#[[ -f "/usr/bin/fzf" ]] && eval "$(fzf --bash)"
-[[ -f "/usr/bin/atuin" ]] && eval "$(atuin init bash)"
+[[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
+[[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
+# [[ -n $(command -v atuin) ]] && eval "$(atuin init bash)"
+[[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
+[[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"
+[[ -n $(command -v jj) ]] && source <(jj util completion bash)
+
+. "$HOME/.cargo/env"
