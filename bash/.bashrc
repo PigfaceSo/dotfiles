@@ -76,5 +76,6 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"
 [[ -n $(command -v jj) ]] && source <(jj util completion bash)
+# [[ -n $(command -v ssh) ]] && pgrep -x ssh-agent > /dev/null || eval "$(ssh-agent -s)"
 
 . "$HOME/.cargo/env"
