@@ -30,6 +30,7 @@ ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/tint2/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/keepassxc/ ${XDG_CONFIG_HOME}
+ln -s ${DOTFILES}/alacitty/ ${XDG_CONFIG_HOME}
 #ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
 #ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
 ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
