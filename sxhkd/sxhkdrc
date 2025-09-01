@@ -12,7 +12,7 @@ super + @space
 
 # browser
 super + e
-    /opt/floorp/floorp
+    firefox
 
 super + r
     xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
@@ -23,6 +23,12 @@ super + x
 
 super + v
     copyq menu
+
+super + shift + m
+    xterm -class programs -e pulsemixer
+
+super + shift + b
+    xterm -class programs -e bluetoothctl
 
 # Screenshot
 @Print

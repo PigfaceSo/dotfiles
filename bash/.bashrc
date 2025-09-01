@@ -48,9 +48,9 @@ PS1="$PS1"'\$ '
 ####################
 ##    Alias       ##
 ####################
-[[ -f "/usr/bin/jq" ]] && alias jq="jq --color-output"
+[[ -n $(command -v jq) ]] && alias jq="jq --color-output"
 alias ls="ls --color=auto"
-# [[ -f "/usr/bin/eza" ]] && alias ls="eza --git"
+# [[ -n $(command -v eza) ]] && alias ls="eza --git"
 alias tree="ls --color=never --tree"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
@@ -62,6 +62,7 @@ alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
 alias djangowebsite="source ~/DjangoWebsite/venv/bin/activate"
 alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/vm/kali-linux-2025.2-qemu-amd64.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
 alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
+[[ -n $(command -v dstask) ]] && alias task="dstask"
 
 ####################
 ##  Load Command  ##
@@ -76,6 +77,8 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"
 [[ -n $(command -v jj) ]] && source <(jj util completion bash)
+[[ -n $(command -v bin) ]] && eval "$(bin completion bash)"
+[[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 # [[ -n $(command -v ssh) ]] && pgrep -x ssh-agent > /dev/null || eval "$(ssh-agent -s)"
 
 . "$HOME/.cargo/env"
