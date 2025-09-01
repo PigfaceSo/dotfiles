@@ -79,6 +79,7 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v jj) ]] && source <(jj util completion bash)
 [[ -n $(command -v bin) ]] && eval "$(bin completion bash)"
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
+[[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 # [[ -n $(command -v ssh) ]] && pgrep -x ssh-agent > /dev/null || eval "$(ssh-agent -s)"
 
 . "$HOME/.cargo/env"
