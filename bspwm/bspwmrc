@@ -19,6 +19,7 @@ pgrep -x wireplumber >/dev/null || /usr/bin/dbus-run-session wireplumber &
 pgrep -x pipewire >/dev/null || /usr/bin/dbus-run-session pipewire &
 pgrep -x pipewire-pulse >/dev/null || /usr/bin/dbus-run-session pipewire-pulse &
 pgrep -x tint2 >/dev/null || tint2 &
+pgrep -x alacritty >/dev/null || alacritty --daemon &
 # pgrep -x keepassxc >/dev/null || keepassxc &
 # pgrep -x copyq >/dev/null || copyq --start-server &
 # pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
