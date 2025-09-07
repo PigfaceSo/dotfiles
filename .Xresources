@@ -3,6 +3,7 @@
 
 XTerm*termName: xterm-256color
 XTerm*backarrowKey: false
+XTerm*metaSendEscape: true
 XTerm*foreground: white
 XTerm*background: black
 XTerm*VT100.geometry: 80x40

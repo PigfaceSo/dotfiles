@@ -16,6 +16,8 @@ fi
 # [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
 # [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
+GPG_TTY=$(tty)
+export GPG_TTY
 
 ####################
 ##    History     ##
@@ -59,9 +61,11 @@ alias ip="ip -c=auto"
 alias klik_up="docker compose --project-directory ~/mysql_klik up -d"
 alias klik_down="docker compose --project-directory ~/mysql_klik down"
 alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
+alias ditto_up="docker compose --project-directory ~/git/ditto/deployment/docker/ up -d"
+alias ditto_down="docker compose --project-directory ~/git/ditto/deployment/docker/ down"
 alias djangowebsite="source ~/DjangoWebsite/venv/bin/activate"
 alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/vm/kali-linux-2025.2-qemu-amd64.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
-alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
+alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2223-:22"
 [[ -n $(command -v dstask) ]] && alias task="dstask"
 
 ####################
@@ -80,6 +84,7 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v bin) ]] && eval "$(bin completion bash)"
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
+[[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
 # [[ -n $(command -v ssh) ]] && pgrep -x ssh-agent > /dev/null || eval "$(ssh-agent -s)"
 
 . "$HOME/.cargo/env"

@@ -5,37 +5,37 @@ echo "====== Dotfile Setup ======"
 DOTFILES="$HOME"'/dotfiles'
 XDG_CONFIG_HOME="$HOME"'/.config'
 
-if [ ! -d ${XDG_CONFIG_HOME} ]; then
-    mkdir ${XDG_CONFIG_HOME}
+if [ ! -d "${XDG_CONFIG_HOME}" ]; then
+    mkdir "${XDG_CONFIG_HOME}"
 fi
 
 # Delete default config bash files
-if [ -e $HOME/.bashrc -o -e $HOME/.bash_profile -o -e $HOME/.inputrc -o -e $HOME/.profile ]; then
-    rm $HOME/.bash_profile $HOME/.bashrc $HOME/.inputrc $HOME/.profile
+if [ -e "$HOME"/.bashrc ] || [ -e "$HOME"/.bash_profile ] || [ -e "$HOME"/.inputrc ] || [ -e "$HOME"/.profile ]; then
+    rm "$HOME"/.bash_profile "$HOME"/.bashrc "$HOME"/.inputrc "$HOME"/.profile
 fi
 
-sudo ln -s ${DOTFILES}/xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/
+sudo ln -s "${DOTFILES}"/xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/
 
-ln -s ${DOTFILES}/.xinitrc $HOME
-ln -s ${DOTFILES}/.Xresources $HOME
-ln -s ${DOTFILES}/.profile $HOME
-ln -s ${DOTFILES}/bash/git-prompt.sh $HOME
-ln -s ${DOTFILES}/bash/.bash_profile $HOME
-ln -s ${DOTFILES}/bash/.bashrc $HOME
-ln -s ${DOTFILES}/bash/.inputrc $HOME
-# ln -s ${DOTFILES}/vim/.vimrc $HOME
+ln -s "${DOTFILES}"/.xinitrc "$HOME"
+ln -s "${DOTFILES}"/.Xresources "$HOME"
+ln -s "${DOTFILES}"/.profile "$HOME"
+ln -s "${DOTFILES}"/bash/git-prompt.sh "$HOME"
+ln -s "${DOTFILES}"/bash/.bash_profile "$HOME"
+ln -s "${DOTFILES}"/bash/.bashrc "$HOME"
+ln -s "${DOTFILES}"/bash/.inputrc "$HOME"
+# ln -s "${DOTFILES}"/vim/.vimrc "$HOME"
 
-ln -s ${DOTFILES}/gtk-3.0/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/sxhkd/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/bspwm/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/tint2/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/keepassxc/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/alacitty/ ${XDG_CONFIG_HOME}
-#ln -s ${DOTFILES}/polybar/ ${XDG_CONFIG_HOME}
-#ln -s ${DOTFILES}/river/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/rofi/ ${XDG_CONFIG_HOME}
-ln -s ${DOTFILES}/betterlockscreen/ ${XDG_CONFIG_HOME}
-#ln -s ${DOTFILES}/tofi/ ${XDG_CONFIG_HOME}
-#ln -s ${DOTFILES}/tmux/ ${XDG_CONFIG_HOME}
+ln -s "${DOTFILES}"/gtk-3.0/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/sxhkd/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/bspwm/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/tint2/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/keepassxc/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/alacitty/ "${XDG_CONFIG_HOME}"
+#ln -s "${DOTFILES}"/polybar/ "${XDG_CONFIG_HOME}"
+#ln -s "${DOTFILES}"/river/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/rofi/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/betterlockscreen/ "${XDG_CONFIG_HOME}"
+#ln -s "${DOTFILES}"/tofi/ "${XDG_CONFIG_HOME}"
+#ln -s "${DOTFILES}"/tmux/ "${XDG_CONFIG_HOME}"
 
 echo "====== Done ======"
