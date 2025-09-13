@@ -133,12 +133,20 @@ keybinds clear-defaults=true {
             SwitchToMode "locked"
         }
         bind "w" {
-            LaunchOrFocusPlugin "session-manager" {
+            Run "zellij-sessionizer" {
                 floating true
                 move_to_focused_tab true
+                close_on_exit true
             }
             SwitchToMode "locked"
         }
+        // bind "w" {
+        //     LaunchOrFocusPlugin "session-manager" {
+        //         floating true
+        //         move_to_focused_tab true
+        //     }
+        //     SwitchToMode "locked"
+        // }
     }
     shared_among "normal" "locked" {
         bind "Alt left" { MoveFocusOrTab "left"; }
