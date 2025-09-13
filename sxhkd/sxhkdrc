@@ -25,10 +25,13 @@ super + v
     copyq menu
 
 super + shift + m
-    xterm -class programs -e pulsemixer
+    pgrep -x pulsemixer >/dev/null && pkill --signal 3 -x pulsemixer || xterm -class programs -e pulsemixer
+
+super + shift + n
+    pgrep -x nmtui >/dev/null && pkill --signal 3 -x nmtui || xterm -class programs -e nmtui
 
 super + shift + b
-    xterm -class programs -e bluetoothctl
+    pgrep -x bluetui >/dev/null && pkill --signal 3 -x bluetui || xterm -class programs -e bluetui
 
 # Screenshot
 @Print

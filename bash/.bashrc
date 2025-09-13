@@ -9,6 +9,10 @@ shopt -s checkwinsize
 ####################
 ##    Load File   ##
 ####################
+
+# Reset stty to default
+stty sane
+
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
@@ -17,6 +21,7 @@ fi
 # [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
 # [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
+export GPG_TTY=$(tty)
 
 ####################
 ##    History     ##
@@ -63,6 +68,8 @@ alias klik_down="docker compose --project-directory ~/mysql_klik down"
 alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
 alias ditto_up="docker compose --project-directory ~/git/ditto/deployment/docker/ up -d"
 alias ditto_down="docker compose --project-directory ~/git/ditto/deployment/docker/ down"
+alias node-red="docker start mynodered"
+alias mosquitto="docker start mosquitto"
 alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/vm/kali-linux-2025.2-qemu-amd64.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
 alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2223-:22"
 [[ -n $(command -v dstask) ]] && alias task="dstask"
@@ -71,8 +78,8 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 ##  Load Command  ##
 ####################
 [[ "$TERM" = "xterm-kitty" ]] && alias ssh="kitten ssh" && alias icat="kitten icat"
-[[ -n $(command -v python3) && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
-[[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
+# [[ -n $(command -v python3) && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
+# [[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
 
 [[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
 [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
@@ -84,6 +91,7 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 [[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
-# [[ -n $(command -v ssh) ]] && pgrep -x ssh-agent > /dev/null || eval "$(ssh-agent -s)"
+
+bind -x '"\C-f": zellij-sessionizer'
 
 . "$HOME/.cargo/env"

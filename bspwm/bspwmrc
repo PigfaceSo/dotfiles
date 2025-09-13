@@ -63,5 +63,5 @@ bspc rule -a ksnip state=floating
 # rectangle=300x300+0+0
 bspc rule -a programs state=floating sticky=on
 bspc rule -a feh state=floating sticky=on
-bspc rule -a nsxiv state=floating sticky=on
+bspc rule -a Nsxiv state=floating sticky=on
 bspc rule -a copyq state=floating sticky=on

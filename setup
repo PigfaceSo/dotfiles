@@ -4,6 +4,7 @@ echo "====== Dotfile Setup ======"
 
 DOTFILES="$HOME"'/dotfiles'
 XDG_CONFIG_HOME="$HOME"'/.config'
+BIN_LOCAL_DIR="$HOME"'/.local/bin'
 
 if [ ! -d "${XDG_CONFIG_HOME}" ]; then
     mkdir "${XDG_CONFIG_HOME}"
@@ -32,6 +33,8 @@ ln -s "${DOTFILES}"/tint2/ "${XDG_CONFIG_HOME}"
 ln -s "${DOTFILES}"/keepassxc/ "${XDG_CONFIG_HOME}"
 ln -s "${DOTFILES}"/alacitty/ "${XDG_CONFIG_HOME}"
 ln -s "${DOTFILES}"/ghostty/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/zellij/ "${XDG_CONFIG_HOME}"
+ln -s "${DOTFILES}"/zellij/zellij-sessionizer "${BIN_LOCAL_DIR}"
 #ln -s "${DOTFILES}"/polybar/ "${XDG_CONFIG_HOME}"
 #ln -s "${DOTFILES}"/river/ "${XDG_CONFIG_HOME}"
 ln -s "${DOTFILES}"/rofi/ "${XDG_CONFIG_HOME}"

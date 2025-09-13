@@ -22,6 +22,10 @@ if [[ -z "$XDG_RUNTIME_DIR" ]]; then
   fi
 fi
 
+if [ -z "$SSH_AGENT_SOCK" ]; then
+  eval "$(ssh-agent -s)"
+fi
+
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty1 ]] && [[ -f "/usr/bin/startx" ]]; then
   exec startx
 fi
