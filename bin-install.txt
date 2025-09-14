@@ -1,0 +1,10 @@
+github.com/marcosnils/bin
+github.com/rs/curlie
+github.com/naggie/dstask
+github.com/jorgerojas26/lazysql
+github.com/xwmx/nb
+github.com/runmedev/runme
+github.com/getsops/sops
+github.com/xo/usql
+github.com/Vencord/Vesktop
+github.com/cryptomator/cryptomator
