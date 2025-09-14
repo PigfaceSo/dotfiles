@@ -91,7 +91,7 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 [[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
-[[ -n $(command -v mise) ]] && eval "$($HOME/.local/bin/mise activate bash)"
+# [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 
 bind -x '"\C-f": zellij-sessionizer'
 
