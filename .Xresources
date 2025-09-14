@@ -1,59 +1,75 @@
+*termName: xterm-256color
+*decTerminalID: vt340
+*numColorRegisters: 256
+*sixelScrolling: 1
+*sixelScrollsRight: 1
+
+*faceName: xft:Hack Nerd Font Mono
+*faceSize: 9
+
+*.scrollBar: false
+*scrollKey: true
+*scrollTtyOutput: true
+*saveLines: 15000
+*backarrowKey: false
+*cursorBlink: true
+
+*highlightSelection: true
+*trimSelection: true
+*selectionToClipboard: true
+
+*.translations: #override \n\
+    Ctrl <Key>-: smaller-vt-font() \n\
+    Ctrl <Key>+: larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
+
 !! Xterm terminal
 !
 
-XTerm*termName: xterm-256color
-XTerm*backarrowKey: false
-XTerm*foreground: white
-XTerm*background: black
+! Colors 0–15
+*.color0:  #4d4d4d
+*.color1:  #ff2b2b
+*.color2:  #98fb98
+*.color3:  #f0e68c
+*.color4:  #cd853f
+*.color5:  #ffdead
+*.color6:  #ffa0a0
+*.color7:  #f5deb3
+*.color8:  #555555
+*.color9:  #ff5555
+*.color10: #55ff55
+*.color11: #ffff55
+*.color12: #87ceff
+*.color13: #ff55ff
+*.color14: #ffd700
+*.color15: #ffffff
+
+! Terminal defaults
+*.background:          #333333
+*.foreground:          #ffffff
+
+! Cursor
+*.cursorColor:         #00ff00
+*.cursorColor2:        #000000   ! cursor text
+
+! Selection
+*.highlightColor:      #b5d5ff   ! selection background
+*.highlightTextColor:  #000000   ! selection foreground
+
+
+!! Xterm
+!
+
 XTerm*VT100.geometry: 80x40
-XTerm*faceName: xft:Hack Nerd Font Mono
-XTerm*faceSize: 9
-
 XTerm*internalBorder: 5
-XTerm*VT100.scrollBar: false
-XTerm*scrollKey: true
-XTerm*scrollTtyOutput: true
-XTerm*saveLines: 15000
 
-XTerm*cursorBlink: true
+!! Xterm class programs
+!
 
-XTerm*highlightSelection: true
-XTerm*trimSelection: true
-XTerm*selectionToClipboard: true
-
-XTerm*VT100.translations: #override \n\
-    Ctrl <Key>-: smaller-vt-font() \n\
-    Ctrl <Key>+: larger-vt-font() \n\
-    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
-
-programs*termName: xterm-256color
-programs*backarrowKey: false
-programs*foreground: white
-programs*background: black
-programs*VT100.geometry: 100x40
-programs*faceName: xft:Hack Nerd Font Mono
-programs*faceSize: 9
-
-programs*internalBorder: 15
-programs*VT100.scrollBar: false
-programs*scrollKey: true
-programs*scrollTtyOutput: true
-programs*saveLines: 15000
-
-programs*cursorBlink: true
-
-programs*highlightSelection: true
-programs*trimSelection: true
-programs*selectionToClipboard: true
-
-programs*VT100.translations: #override \n\
-    Ctrl <Key>-: smaller-vt-font() \n\
-    Ctrl <Key>+: larger-vt-font() \n\
-    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
-    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
+programs*VT100.geometry: 100x30
+programs*internalBorder: 20
 
 !! URxvt terminal
 !
