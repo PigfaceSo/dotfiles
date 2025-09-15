@@ -29,5 +29,3 @@ fi
 if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty2 ]] && [[ -f "/usr/bin/startx" ]]; then
   exec startx
 fi
-
-. "$HOME/.local/share/../bin/env"
