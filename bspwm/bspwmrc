@@ -3,25 +3,25 @@
 # StartUp session
 #
 # Background
-~/.fehbg &
+# ~/.fehbg &
 
 # Setcursor
-xsetroot -cursor_name left_ptr &
+# xsetroot -cursor_name left_ptr &
 
 # Keyboard layout
-setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
+# setxkbmap -layout us,th -model pc104 -option grp:caps_toggle &
 
-xrdb -merge ~/.Xresources &
+# xrdb -merge ~/.Xresources &
 
 # AutoStart
-pgrep -x sxhkd >/dev/null || sxhkd &
-pgrep -x wireplumber >/dev/null || /usr/bin/dbus-run-session wireplumber &
-pgrep -x pipewire >/dev/null || /usr/bin/dbus-run-session pipewire &
-pgrep -x pipewire-pulse >/dev/null || /usr/bin/dbus-run-session pipewire-pulse &
-pgrep -x polybar >/dev/null || polybar top &
+pgrep -x sxhkd >/dev/null || /usr/bin/sxhkd &
+# pgrep -x pipewire >/dev/null || /usr/bin/dbus-run-session /usr/bin/pipewire
+# pgrep -x pipewire-pulse >/dev/null || /usr/bin/dbus-run-session /usr/bin/pipewire-pulse
+# pgrep -x wireplumber >/dev/null || /usr/bin/dbus-run-session /usr/bin/wireplumber
+# pgrep -x polybar >/dev/null || /usr/bin/polybar top &
 # pgrep -x tint2 >/dev/null || tint2 &
 # pgrep -x alacritty >/dev/null || alacritty --daemon &
-pgrep -x keepassxc >/dev/null || keepassxc &
+# pgrep -x keepassxc >/dev/null || /usr/bin/keepassxc &
 # pgrep -x copyq >/dev/null || copyq --start-server &
 # pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
 
