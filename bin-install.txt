@@ -8,3 +8,4 @@ github.com/getsops/sops
 github.com/xo/usql
 github.com/Vencord/Vesktop
 github.com/cryptomator/cryptomator
+github.com/kubernetes/minikube
