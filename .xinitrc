@@ -18,6 +18,7 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 pgrep -x pulseaudio >/dev/null || pulseaudio --start &
 pgrep -x keepassxc >/dev/null || keepassxc &
 pgrep -x polybar >/dev/null || polybar top &
+pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
 
 # pgrep -x pipewire >/dev/null || /usr/bin/dbus-run-session /usr/bin/pipewire &
 # pgrep -x pipewire-pulse >/dev/null || /usr/bin/dbus-run-session /usr/bin/pipewire-pulse &
