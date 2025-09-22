@@ -1,7 +1,7 @@
 # .profile
 
-[[ -n $(command -v rclone) ]] && rclone mount PSUDrive: ~/PSUDrive --daemon --vfs-cache-mode full &
-[[ -n $(command -v rclone) ]] && rclone mount FormalDrive: ~/FormalDrive --daemon --vfs-cache-mode full &
+# [[ -n $(command -v rclone) ]] && rclone mount PSUDrive: ~/PSUDrive --daemon --vfs-cache-mode full &
+# [[ -n $(command -v rclone) ]] && rclone mount FormalDrive: ~/FormalDrive --daemon --vfs-cache-mode full &
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1

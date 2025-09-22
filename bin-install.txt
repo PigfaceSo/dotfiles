@@ -1,11 +1,20 @@
 github.com/marcosnils/bin
 github.com/rs/curlie
 github.com/naggie/dstask
+github.com/altsem/gitu
 github.com/jorgerojas26/lazysql
+github.com/jesseduffield/lazygit
+github.com/jesseduffield/lazydocker
+github.com/Adembc/lazyssh
+github.com/xo/usql
 github.com/xwmx/nb
 github.com/runmedev/runme
 github.com/getsops/sops
-github.com/xo/usql
+github.com/jdx/mise
 github.com/Vencord/Vesktop
 github.com/cryptomator/cryptomator
-github.com/kubernetes/minikube
+github.com/ikebastuz/wiper
+github.com/wtfutil/wtf
+github.com/mierak/rmpc
+github.com/gdzx/audiosource
+# github.com/kubernetes/minikube

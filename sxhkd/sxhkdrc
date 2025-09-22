@@ -47,9 +47,9 @@ XF86AudioLowerVolume
 XF86AudioMute
     pulsemixer --toggle-mute
 XF86MonBrightnessUp
-    brightnessctl set +5%
+    brightnessctl set +3%
 XF86MonBrightnessDown
-    brightnessctl set 5%-
+    brightnessctl set 3%-
 
 #
 # bspwm hotkeys

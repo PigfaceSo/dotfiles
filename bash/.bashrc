@@ -91,8 +91,7 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 [[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
+[[ -n $(command -v spotify_player) ]] && eval "$(spotify_player generate bash)"
 # [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 
 bind -x '"\C-f": zellij-sessionizer'
-
-. "$HOME/.cargo/env"
