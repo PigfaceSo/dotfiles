@@ -15,6 +15,7 @@ github.com/Vencord/Vesktop
 github.com/cryptomator/cryptomator
 github.com/ikebastuz/wiper
 github.com/wtfutil/wtf
-github.com/mierak/rmpc
 github.com/gdzx/audiosource
+github.com/ferdium/ferdium-app
+# github.com/mierak/rmpc
 # github.com/kubernetes/minikube
