@@ -18,8 +18,9 @@ super + r
     xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 
 # Lock screen
+# betterlockscreen -l blur
 super + x
-    betterlockscreen -l blur
+    slock
 
 super + v
     copyq menu

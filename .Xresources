@@ -7,6 +7,8 @@
 *faceName: xft:Hack Nerd Font Mono
 *faceSize: 9
 
+*keyboardType: pc
+*eightBitInput: false
 *.scrollBar: false
 *scrollKey: true
 *scrollTtyOutput: true
@@ -27,7 +29,8 @@
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
     Ctrl <Btn1Down>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
-    Ctrl <Btn3Down>: popup-menu(mainMenu)
+    Ctrl <Btn3Down>: popup-menu(mainMenu) \n\
+    <Key>KP_Enter: string("\n")
 
 !! Xterm terminal
 !

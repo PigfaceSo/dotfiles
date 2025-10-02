@@ -21,6 +21,7 @@ pgrep -x wireplumber >/dev/null || wireplumber &
 pgrep -x keepassxc >/dev/null || keepassxc &
 pgrep -x polybar >/dev/null || polybar top &
 pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
+pgrep -x xautolock >/dev/null || xautolock -time 4 -lock slock &
 
 # pgrep -x pulseaudio >/dev/null || pulseaudio --start &
 # pgrep -x copyq > /dev/null || copyq && copyq hide &
