@@ -18,6 +18,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
+# [[ -f "$HOME/esp/esp-idf/export.sh" ]] && source $HOME/esp/esp-idf/export.sh
 # [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
 # [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
@@ -68,11 +69,13 @@ alias klik_down="docker compose --project-directory ~/mysql_klik down"
 alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
 alias ditto_up="docker compose --project-directory ~/git/ditto/deployment/docker/ up -d"
 alias ditto_down="docker compose --project-directory ~/git/ditto/deployment/docker/ down"
-alias node-red="docker start mynodered"
+alias node-red="docker start node-red"
 alias mosquitto="docker start mosquitto"
 alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/vm/kali-linux-2025.2-qemu-amd64.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
 alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/vm/Metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2223-:22"
 [[ -n $(command -v dstask) ]] && alias task="dstask"
+[[ -n $(command -v curl) ]] && alias curl="curlie"
+[[ -f "$HOME/esp/esp-idf/export.sh" ]] && alias esp_export="source $HOME/esp/esp-idf/export.sh"
 
 ####################
 ##  Load Command  ##
@@ -94,4 +97,5 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v spotify_player) ]] && eval "$(spotify_player generate bash)"
 # [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 
-bind -x '"\C-f": zellij-sessionizer'
+# bind -x '"\C-f": zellij-sessionizer'
+bind -x '"\C-f": tmux-sessionizer'
