@@ -1,0 +1,15 @@
+/*Font settings for the time text*/
+static const float textsize=92.0;
+static const char* textfamily="serif";
+static const double textcolorred=255;
+static const double textcolorgreen=255;
+static const double textcolorblue=255;
+
+static const char *colorname[NUMCOLS] = {
+	[INIT] =   "black",     /* after initialization */
+	[INPUT] =  "#66220A",   /* during input */
+	[FAILED] = "#CC3333",   /* wrong password */
+};
+
+/* treat a cleared input like a wrong password (color) */
+static const int failonclear = 1;
