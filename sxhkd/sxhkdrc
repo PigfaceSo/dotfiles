@@ -25,7 +25,7 @@ super + x
     slock
 
 super + p
-    power_action
+    power-action
 
 super + v
     copyq menu
@@ -45,6 +45,9 @@ super + shift + b
 
 shift + @Print
     scrot "$HOME/Pictures/screenshot/%Y-%m-%d-%T-fullscreen-screenshot.png" --silent -e 'xclip -sel clipboard -target image/png -i $f'
+
+super + @Print
+    screenshot
 
 XF86AudioRaiseVolume
     pulsemixer --change-volume +2

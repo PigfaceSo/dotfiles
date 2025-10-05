@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 CHOICE=$(printf "poweroff\nreboot\nlockscreen" | dmenu -p "Power ")
 

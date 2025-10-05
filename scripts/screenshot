@@ -1,0 +1,28 @@
+#!/bin/env bash
+
+# CHOICE=$(printf "Rectangular\nActiveWindow\nFullscreen" | tofi)
+# slurp | grim -g - - | wl-copy
+
+DIRECTORY="$HOME"'/Pictures/screenshot'
+if [ ! -d "${DIRECTORY}" ]; then
+  mkdir -p "${DIRECTORY}"
+fi
+
+FILE="$HOME"'/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png'
+# FILE="/tmp/%Y-%m-%d-%T-screenshot.png"
+
+CHOICE=$(printf "rectangular\nactiveWindow\nfullscreen" | dmenu -p "Screenshot ")
+
+case "${CHOICE}" in
+  "rectangular")
+    scrot "${FILE}" --silent -s -f --line mode=edge -e 'xclip -sel clip -target image/png -i $f &'
+    ;;
+  "activeWindow")
+    scrot "${FILE}" --silent -u -e 'xclip -sel clip -target image/png -i $f &'
+    ;;
+  "fullscreen")
+    scrot "${FILE}" --silent -e 'xclip -sel clip -target image/png -i $f &'
+    ;;
+esac
+
+exit 0
