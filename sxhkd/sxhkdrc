@@ -4,18 +4,20 @@
 
 # terminal emulator
 super + Return
-    xterm
+    st
 
 # program launcher
+# rofi -show drun
 super + @space
-    rofi -show drun
+    find /usr/share/applications $HOME/.local/share/applications -type f -printf "%f\n" | dmenu -p "App " | xargs gtk-launch
 
 # browser
 super + e
     firefox
 
+# xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 super + r
-    xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
+    xterm -class programs -e $(find /usr/bin /usr/local/bin -type f -executable -printf "%f\n" | dmenu -p "Run ")
 
 # Lock screen
 # betterlockscreen -l blur

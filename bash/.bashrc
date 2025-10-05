@@ -11,7 +11,7 @@ shopt -s checkwinsize
 ####################
 
 # Reset stty to default
-stty sane
+# stty sane
 
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -27,10 +27,10 @@ export GPG_TTY=$(tty)
 ####################
 ##    History     ##
 ####################
-export HISTSIZE=9999
-export HISTFILESIZE=9999
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 export HISTCONTROL=ignorespace:ignoredups:erasedups
-export HISTIGNORE="*-h:*--help*:ls:ls -la:ls -l:history:clear:pwd:exit:whoami:date"
+export HISTIGNORE="*-h:*--help*:ls:ls -*:history*:clear:pwd:exit:whoami:date"
 # export HISTTIMEFORMAT="%Y-%m-%d %T "
 
 ####################
@@ -51,6 +51,12 @@ PS1="$PS1"'${GIT}'
 PS1="$PS1"'\[\e[0m\]'
 PS1="$PS1"'\n'
 PS1="$PS1"'\$ '
+
+####################
+##    Binds       ##
+####################
+bind -x '"\C-f": tmux-sessionizer'
+# bind -x '"\C-f": zellij-sessionizer'
 
 ####################
 ##    Alias       ##
@@ -84,9 +90,8 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 # [[ -n $(command -v python3) && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
 # [[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
 
-[[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
 [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
-# [[ -n $(command -v atuin) ]] && eval "$(atuin init bash)"
+[[ -n $(command -v atuin) ]] && eval "$(atuin init bash)"
 [[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"
 [[ -n $(command -v jj) ]] && source <(jj util completion bash)
@@ -95,7 +100,5 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 [[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
 [[ -n $(command -v spotify_player) ]] && eval "$(spotify_player generate bash)"
-# [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
-
-# bind -x '"\C-f": zellij-sessionizer'
-bind -x '"\C-f": tmux-sessionizer'
+[[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
+[[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
