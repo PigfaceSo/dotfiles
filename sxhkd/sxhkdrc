@@ -24,6 +24,9 @@ super + r
 super + x
     slock
 
+super + p
+    power_action
+
 super + v
     copyq menu
 
