@@ -100,5 +100,5 @@ alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
 [[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
 [[ -n $(command -v spotify_player) ]] && eval "$(spotify_player generate bash)"
-[[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
+# [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 [[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
