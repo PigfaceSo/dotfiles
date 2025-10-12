@@ -13,6 +13,10 @@ FILE="$HOME"'/Pictures/screenshot/%Y-%m-%d-%T-screenshot.png'
 
 CHOICE=$(printf "rectangular\nactiveWindow\nfullscreen" | dmenu -p "Screenshot ")
 
+if [ -z "$CHOICE" ]; then
+    exit 1
+fi
+
 case "${CHOICE}" in
   "rectangular")
     scrot "${FILE}" --silent -s -f --line mode=edge -e 'xclip -sel clip -target image/png -i $f &'
@@ -24,5 +28,3 @@ case "${CHOICE}" in
     scrot "${FILE}" --silent -e 'xclip -sel clip -target image/png -i $f &'
     ;;
 esac
-
-exit 0

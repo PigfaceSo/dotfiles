@@ -1,0 +1,14 @@
+#!/bin/env bash
+
+DIRECTORY="$HOME"'/VM'
+
+CHOICE=$(printf "kali\nmetasploitable" | dmenu -p "VM ")
+
+case "${CHOICE}" in
+  "kali")
+  qemu-system-x86_64
+  ;;
+  "metasploitable")
+  qemu-system-x86_64
+  ;;
+esac

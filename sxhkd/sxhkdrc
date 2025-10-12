@@ -17,7 +17,7 @@ super + e
 
 # xterm -class programs -e $(ls /usr/bin | rofi -dmenu)
 super + r
-    xterm -class programs -e $(find /usr/bin /usr/local/bin -type f -executable -printf "%f\n" | dmenu -p "Run ")
+    st -c programs -e $(find /usr/bin /usr/local/bin -type f -executable -printf "%f\n" | dmenu -p "Run ")
 
 # Lock screen
 # betterlockscreen -l blur
@@ -27,17 +27,22 @@ super + x
 super + p
     power-action
 
+super + o
+    open-pdf
+
+# super + v
+#     copyq menu
 super + v
-    copyq menu
+    qemu-menu
 
 super + shift + m
-    pgrep -x pulsemixer >/dev/null && pkill --signal 3 -x pulsemixer || xterm -class programs -e pulsemixer
+    pgrep -x pulsemixer >/dev/null && pkill --signal 3 -x pulsemixer || st -c programs -e pulsemixer
 
 super + shift + n
-    pgrep -x nmtui >/dev/null && pkill --signal 3 -x nmtui || xterm -class programs -e nmtui
+    pgrep -x nmtui >/dev/null && pkill --signal 3 -x nmtui || st -c programs -e nmtui
 
 super + shift + b
-    pgrep -x bluetui >/dev/null && pkill --signal 3 -x bluetui || xterm -class programs -e bluetui
+    pgrep -x bluetui >/dev/null && pkill --signal 3 -x bluetui || st -c programs -e bluetui
 
 # Screenshot
 @Print
@@ -113,10 +118,10 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+# super + {o,i}
+# 	bspc wm -h off; \
+# 	bspc node {older,newer} -f; \
+# 	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}

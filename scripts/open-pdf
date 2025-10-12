@@ -1,0 +1,19 @@
+#!/bin/env bash
+
+FILE=$(find "$HOME/Downloads" "$HOME/Documents" -name "*.pdf" -type f | dmenu -p "PDF " -l 20)
+
+if [ -z "$FILE" ]; then
+    exit 1
+fi
+
+DIR=$(dirname "$FILE")
+FILENAME=$(basename "$FILE")
+NEW_FILENAME=${FILENAME// /_}
+
+if [ "$FILENAME" != "$NEW_FILENAME" ]; then
+    NEW_FILE_PATH="$DIR/$NEW_FILENAME"
+    mv "$FILE" "$NEW_FILE_PATH"
+    FILE="$NEW_FILE_PATH"
+fi
+
+xdg-open "$FILE"

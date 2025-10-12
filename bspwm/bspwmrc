@@ -51,6 +51,8 @@ bspc config pointer_follows_focus false
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Firefox desktop='^1'
 bspc rule -a floorp desktop='^1'
+bspc rule -a st desktop='^2'
+bspc rule -a xterm desktop='^2'
 bspc rule -a Soffice desktop='^2'
 bspc rule -a AppRun.wrapped desktop='^3'
 bspc rule -a Thunar state=floating
