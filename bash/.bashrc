@@ -18,10 +18,12 @@ if [ -f /etc/bash_completion ]; then
 fi
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
+[[ -f $HOME/.geminirc ]] && source $HOME/.geminirc
 # [[ -f "$HOME/esp/esp-idf/export.sh" ]] && source $HOME/esp/esp-idf/export.sh
 # [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
 # [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux
 export GPG_TTY=$(tty)
 
 ####################
@@ -66,6 +68,7 @@ bind -x '"\C-f": tmux-sessionizer'
 alias ls="ls --color=auto"
 # [[ -n $(command -v eza) ]] && alias ls="eza --git"
 alias tree="ls --color=never --tree"
+alias c="clear"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
 alias ip="ip -c=auto"
