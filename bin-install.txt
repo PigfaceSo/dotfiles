@@ -18,5 +18,6 @@ github.com/wtfutil/wtf
 github.com/gdzx/audiosource
 github.com/ferdium/ferdium-app
 github.com/orhun/kmon
+github.com/localsend/localsend
 # github.com/mierak/rmpc
 # github.com/kubernetes/minikube

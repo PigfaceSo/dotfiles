@@ -20,7 +20,7 @@ pgrep -x pipewire-pulse >/dev/null || pipewire-pulse &
 pgrep -x wireplumber >/dev/null || wireplumber &
 pgrep -x keepassxc >/dev/null || keepassxc &
 pgrep -x polybar >/dev/null || polybar top &
-pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
+# pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
 pgrep -x xautolock >/dev/null || xautolock -time 5 -locker slock &
 
 # pgrep -x pulseaudio >/dev/null || pulseaudio --start &

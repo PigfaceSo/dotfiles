@@ -66,6 +66,7 @@ bind -x '"\C-f": tmux-sessionizer'
 [[ "$TERM" = "xterm-ghostty" ]] && alias ssh="TERM=xterm-256color ssh"
 [[ -n $(command -v jq) ]] && alias jq="jq --color-output"
 alias ls="ls --color=auto"
+alias rm="rm -rf"
 # [[ -n $(command -v eza) ]] && alias ls="eza --git"
 alias tree="ls --color=never --tree"
 alias c="clear"
