@@ -10,21 +10,13 @@ shopt -s checkwinsize
 ##    Load File   ##
 ####################
 
-# Reset stty to default
-# stty sane
-
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 [[ -f $HOME/.bash_aliases ]] && source $HOME/.bash_aliases
 [[ -f $HOME/git-prompt.sh ]] && source $HOME/git-prompt.sh
 [[ -f $HOME/.geminirc ]] && source $HOME/.geminirc
-# [[ -f "$HOME/esp/esp-idf/export.sh" ]] && source $HOME/esp/esp-idf/export.sh
-# [[ -f $HOME/fzf-git.sh ]] && source $HOME/fzf-git.sh
-# [[ -f $HOME/.local/share/blesh/ble.sh ]] && source -- ~/.local/share/blesh/ble.sh
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux
-export GPG_TTY=$(tty)
 
 ####################
 ##    History     ##
@@ -63,47 +55,40 @@ bind -x '"\C-f": tmux-sessionizer'
 ####################
 ##    Alias       ##
 ####################
+[[ "$TERM" = "xterm-kitty" ]] && alias ssh="kitten ssh" && alias icat="kitten icat"
 [[ "$TERM" = "xterm-ghostty" ]] && alias ssh="TERM=xterm-256color ssh"
+[[ -f "$HOME/esp/esp-idf/export.sh" ]] && alias esp_export="source $HOME/esp/esp-idf/export.sh"
 [[ -n $(command -v jq) ]] && alias jq="jq --color-output"
+[[ -n $(command -v nvim) ]] && alias vim="nvim"
+[[ -n $(command -v dstask) ]] && alias task="dstask"
+[[ -n $(command -v curlie) ]] && alias curl="curlie"
 alias ls="ls --color=auto"
-alias rm="rm -rf"
-# [[ -n $(command -v eza) ]] && alias ls="eza --git"
-alias tree="ls --color=never --tree"
+# [[ -n $(command -v eza) ]] && alias ls="eza --git" && alias tree="eza --color=never --tree"
 alias c="clear"
 alias ll="ls -alF"
 alias grep="grep --color=auto"
 alias ip="ip -c=auto"
 alias env="env | less"
-
-alias klik_up="docker compose --project-directory ~/mysql_klik up -d"
-alias klik_down="docker compose --project-directory ~/mysql_klik down"
-alias klik_mysql="docker exec -it klik_mysql bash -c 'mysql -u root -D klik'"
-alias ditto_up="docker compose --project-directory ~/git/ditto/deployment/docker/ up -d"
-alias ditto_down="docker compose --project-directory ~/git/ditto/deployment/docker/ down"
-alias node-red="docker start node-red"
-alias mosquitto="docker start mosquitto"
-alias kali_run="qemu-system-x86_64 -accel kvm -m 4G -smp 2 -drive file=~/Downloads/VM/kali.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2222-:22"
-alias metaploitable_run="qemu-system-x86_64 -accel kvm -m 1G -smp 2 -drive file=~/Downloads/VM/metasploitable.qcow2,format=qcow2 -device virtio-net-pci,netdev=net0 -netdev user,id=net0,hostfwd=tcp::2223-:22"
-[[ -n $(command -v dstask) ]] && alias task="dstask"
-[[ -n $(command -v curl) ]] && alias curl="curlie"
-[[ -f "$HOME/esp/esp-idf/export.sh" ]] && alias esp_export="source $HOME/esp/esp-idf/export.sh"
+alias node-red="podman start node-red"
+alias mosquitto="podman start mosquitto"
 
 ####################
 ##  Load Command  ##
 ####################
-[[ "$TERM" = "xterm-kitty" ]] && alias ssh="kitten ssh" && alias icat="kitten icat"
-# [[ -n $(command -v python3) && ! -d "$HOME/.venv/base" ]] && echo "Create Python ENV..." && python3 -m venv $HOME/.venv/base
-# [[ -d "$HOME/.venv/base" ]] && source $HOME/.venv/base/bin/activate
 
 [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
 [[ -n $(command -v atuin) ]] && eval "$(atuin init bash)"
 [[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"
 [[ -n $(command -v jj) ]] && source <(jj util completion bash)
-[[ -n $(command -v bin) ]] && eval "$(bin completion bash)"
 [[ -n $(command -v thefuck) ]] && eval "$(thefuck --alias)"
 [[ -n $(command -v dstask) ]] && eval "$(dstask bash-completion)"
-[[ -n $(command -v await) ]] && eval "$(await --autocomplete-bash)"
-[[ -n $(command -v spotify_player) ]] && eval "$(spotify_player generate bash)"
-# [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
+[[ -n $(command -v kuberctl) ]] && source <(kubectl completion bash)
+[[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 [[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/wonwow/google-cloud-sdk/path.bash.inc' ]; then . '/home/wonwow/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/wonwow/google-cloud-sdk/completion.bash.inc' ]; then . '/home/wonwow/google-cloud-sdk/completion.bash.inc'; fi

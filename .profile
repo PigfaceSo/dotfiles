@@ -1,8 +1,5 @@
 # .profile
 
-# [[ -n $(command -v rclone) ]] && rclone mount PSUDrive: ~/PSUDrive --daemon --vfs-cache-mode full &
-# [[ -n $(command -v rclone) ]] && rclone mount FormalDrive: ~/FormalDrive --daemon --vfs-cache-mode full &
-
 export QT_QPA_PLATFORMTHEME=qt5ct
 export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
@@ -16,20 +13,20 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share:"
 export XDG_CONFIG_DIRS="/etc/xdg"
 
-if [[ -z "$XDG_RUNTIME_DIR" ]]; then
-  export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
-  if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
-    mkdir -p "$XDG_RUNTIME_DIR"
-    chmod 0700 "$XDG_RUNTIME_DIR"
-    chown $(id -u):$(id -g) "$XDG_RUNTIME_DIR"
-  fi
-fi
+# if [ -z "$XDG_RUNTIME_DIR" ]; then
+#   export XDG_RUNTIME_DIR="/tmp/user/$(id -u)"
+#   if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+#     mkdir -p "$XDG_RUNTIME_DIR"
+#     chmod 0700 "$XDG_RUNTIME_DIR"
+#     chown $(id -u):$(id -g) "$XDG_RUNTIME_DIR"
+#   fi
+# fi
 
-if [ -z "$SSH_AGENT_SOCK" ]; then
-  eval "$(ssh-agent -s)" >/dev/null
-  ssh-add ~/.ssh/github 2>/dev/null
-fi
+# if [ -z "$SSH_AGENT_SOCK" ]; then
+#   eval "$(ssh-agent -s)" >/dev/null
+#   ssh-add ~/.ssh/github 2>/dev/null
+# fi
 
-if [[ -z "$DISPLAY" ]] && [[ $(tty) == /dev/tty2 ]] && [[ -f "/usr/bin/startx" ]]; then
+if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty2 ] && [ -f "/usr/bin/startx" ]; then
   exec startx
 fi
