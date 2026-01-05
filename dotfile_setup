@@ -1,0 +1,67 @@
+#!/bin/sh
+
+DOTFILES="$HOME"'/dotfiles'
+SCRIPTS="$DOTFILES"'/scripts'
+XDG_CONFIG_HOME="$HOME"'/.config'
+BIN_LOCAL_DIR="$HOME"'/.local/bin'
+SCRIPT_FILES=$(find ${SCRIPTS} -type f -printf '%f ')
+HOME_FILES=".profile .bash_profile .bashrc .xinitrc .Xresources git-prompt.sh"
+CONFIG_FOLDER="tmux tmux-sessionizer"
+
+if [ ! -d "${XDG_CONFIG_HOME}" ]; then
+    mkdir "${XDG_CONFIG_HOME}"
+fi
+
+show_help(){
+  cat << EOF
+Usage: dotfile_setup [ARGS] [OPTIONS]
+Options:
+    install             Install in this dotfiles
+    uninstall           Uninstall in this dotfiles
+    -h, --help          Show this help
+EOF
+}
+
+install(){
+  sudo ln -s "${DOTFILES}"/xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/
+  for file in ${SCRIPT_FILES}
+  do
+    sudo cp "${SCRIPTS}/$file" /usr/local/bin/
+  done
+
+  for file in ${HOME_FILES}
+  do
+    ln -s "${DOTFILES}/bash/$file" "$HOME"
+  done
+
+  for folder in ${CONFIG_FOLDER}
+  do
+    ln -s "${DOTFILES}/$folder" "${XDG_CONFIG_HOME}"
+  done
+
+}
+
+uninstall(){
+  for file in ${SCRIPT_FILES}
+  do
+    sudo rm "/usr/local/bin/$file"
+  done
+
+  for file in ${HOME_FILES}
+  do
+    rm "$HOME/$home"
+  done
+
+  for folder in ${CONFIG_FOLDER}
+  do
+    rm "${XDG_CONFIG_HOME}/$folder"
+  done
+
+}
+
+case $1 in
+  install) install ;;
+  uninstall) uninstall ;;
+  help|-h|--help) show_help ;;
+  *) show_help ;;
+esac

@@ -15,16 +15,16 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 # AutoStart
 [ -f "$HOME/.fehbg" ] && ~/.fehbg &
 
-pgrep -x pipewire >/dev/null || pipewire &
-pgrep -x pipewire-pulse >/dev/null || pipewire-pulse &
-pgrep -x wireplumber >/dev/null || wireplumber &
-pgrep -x keepassxc >/dev/null || keepassxc &
-pgrep -x polybar >/dev/null || polybar top &
+# pgrep -x pipewire >/dev/null || pipewire &
+# pgrep -x pipewire-pulse >/dev/null || pipewire-pulse &
+# pgrep -x wireplumber >/dev/null || wireplumber &
+# pgrep -x keepassxc >/dev/null || keepassxc &
+# pgrep -x polybar >/dev/null || polybar top &
 # pgrep -x syncthing >/dev/null || syncthing serve --no-browser &
-pgrep -x xautolock >/dev/null || xautolock -time 5 -locker slock &
+# pgrep -x xautolock >/dev/null || xautolock -time 5 -locker slock &
 
 # pgrep -x pulseaudio >/dev/null || pulseaudio --start &
 # pgrep -x copyq > /dev/null || copyq && copyq hide &
 # pgrep -x redshift > /dev/null || redshift -PO 2200 &
 
-exec dbus-run-session -- bspwm
+exec dwm

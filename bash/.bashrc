@@ -76,7 +76,7 @@ alias mosquitto="podman start mosquitto"
 ##  Load Command  ##
 ####################
 
-[[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
+# [[ -n $(command -v fzf) ]] && eval "$(fzf --bash)"
 [[ -n $(command -v atuin) ]] && eval "$(atuin init bash)"
 [[ -n $(command -v direnv) ]] && eval "$(direnv hook bash)"
 [[ -n $(command -v zellij) ]] && eval "$(zellij setup --generate-completion bash)"

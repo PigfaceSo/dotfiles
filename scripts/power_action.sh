@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/sh
 
 CHOICE=$(printf "poweroff\nreboot\nlockscreen" | dmenu -p "Power ")
 
@@ -8,10 +8,10 @@ fi
 
 case ${CHOICE} in
   "poweroff")
-    [[ -n $(command -v loginctl) ]] && loginctl poweroff || sudo poweroff
+    [[ -n $(command -v systemctl) ]] && systemctl poweroff || sudo poweroff
     ;;
   "reboot")
-    [[ -n $(command -v loginctl) ]] && loginctl reboot || sudo reboot
+    [[ -n $(command -v systemctl) ]] && systemctl reboot || sudo reboot
     ;;
   "lockscreen")
     slock

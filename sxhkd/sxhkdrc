@@ -25,10 +25,7 @@ super + x
     slock
 
 super + p
-    power-action
-
-super + o
-    open-pdf
+    power_action
 
 # super + v
 #     copyq menu

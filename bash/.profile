@@ -1,10 +1,9 @@
 # .profile
 
 export QT_QPA_PLATFORMTHEME=qt5ct
-export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="xterm"
+export TERMINAL="st"
 export BROWSER="firefox"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -27,6 +26,6 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 #   ssh-add ~/.ssh/github 2>/dev/null
 # fi
 
-if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty2 ] && [ -f "/usr/bin/startx" ]; then
-  exec startx
-fi
+# if [ -z "$DISPLAY" ] && [ $(tty) == /dev/tty2 ] && [ -f "/usr/bin/startx" ]; then
+#   exec startx
+# fi
