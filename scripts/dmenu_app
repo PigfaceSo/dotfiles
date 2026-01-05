@@ -1,0 +1,2 @@
+#!/bin/sh
+find /usr/share/applications $HOME/.local/share/applications -type f -printf "%f\n" | dmenu -p "App " | xargs gtk-launch

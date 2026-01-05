@@ -8,10 +8,10 @@ fi
 
 case ${CHOICE} in
   "poweroff")
-    [[ -n $(command -v systemctl) ]] && systemctl poweroff || sudo poweroff
+    [ -n $(command -v systemctl) ] && systemctl poweroff || sudo poweroff
     ;;
   "reboot")
-    [[ -n $(command -v systemctl) ]] && systemctl reboot || sudo reboot
+    [ -n $(command -v systemctl) ] && systemctl reboot || sudo reboot
     ;;
   "lockscreen")
     slock
