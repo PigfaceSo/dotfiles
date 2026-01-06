@@ -1,19 +1,23 @@
 #!/bin/sh
 
-DOTFILES="$HOME"'/dotfiles'
-SCRIPTS="$DOTFILES"'/scripts'
-XDG_CONFIG_HOME="$HOME"'/.config'
-BIN_LOCAL_DIR="$HOME"'/.local/bin'
-SHARE_LOCAL_DIR="$HOME"'/.local/share'
-SCRIPT_FILES=$(find ${SCRIPTS} -type f -printf '%f ')
-HOME_FILES=".profile .bash_profile .bashrc .xinitrc .Xresources git-prompt.sh"
-CONFIG_FOLDER="tmux tmux-sessionizer containers"
+DOTFILES_DIR="$HOME/dotfiles"
+SCRIPT_DIR="${DOTFILES_DIR}/scripts"
+HOME_DIR="${DOTFILES_DIR}/home"
+CONFIG_DIR="${DOTFILES_DIR}/config"
+FONT_DIR="${DOTFILES_DIR}/fonts"
+XORG_CONF_DIR="${DOTFILES_DIR}/xorg.conf.d"
+SCRIPT_FILE="$(find "${SCRIPT_DIR}" -type f -printf '%f ')"
+HOME_FILE="$(find "${HOME_DIR}" -type f -printf '%f ')"
+CONFIG_FILE="$(find "${CONFIG_DIR}" -mindepth 1 -type d -printf '%f ')"
+XORG_CONF_FILE="$(find "${XORG_CONF_DIR}" -type f -printf '%f ')"
+SHARE_LOCAL_DIR="$HOME/.local/share"
+XDG_CONFIG_HOME="$HOME/.config"
 
 if [ ! -d "${XDG_CONFIG_HOME}" ]; then
-    mkdir -p "${XDG_CONFIG_HOME}"
+  mkdir -p "${XDG_CONFIG_HOME}"
 fi
 
-show_help(){
+__show_help(){
   cat << EOF
 Usage: dotfile_setup [ARGS] [OPTIONS]
 Options:
@@ -23,47 +27,54 @@ Options:
 EOF
 }
 
-install(){
-  sudo ln -s "${DOTFILES}"/xorg.conf.d/30-touchpad.conf /etc/X11/xorg.conf.d/
-  for file in ${SCRIPT_FILES}
+__install(){
+
+  cp -r "${FONT_DIR}" "${SHARE_LOCAL_DIR}"
+
+  for file in ${XORG_CONF_FILE}
   do
-    sudo cp "${SCRIPTS}/$file" /usr/local/bin/
+    sudo ln -s "${XORG_CONF_DIR}/$file" /etc/X11/xorg.conf.d/
+  done
+  
+  for file in ${SCRIPT_FILE}
+  do
+    sudo cp "${SCRIPT_DIR}/$file" /usr/local/bin/
   done
 
-  for file in ${HOME_FILES}
+  for file in ${HOME_FILE}
   do
-    ln -s "${DOTFILES}/bash/$file" "$HOME"
+    ln -s "${HOME_DIR}/$file" "$HOME"
   done
 
-  for folder in ${CONFIG_FOLDER}
+  for file in ${CONFIG_FILE}
   do
-    ln -s "${DOTFILES}/$folder" "${XDG_CONFIG_HOME}"
-  done
-
-  cp -r "${DOTFILES}/fonts" ${SHARE_LOCAL_DIR}
-}
-
-uninstall(){
-  for file in ${SCRIPT_FILES}
-  do
-    sudo rm "/usr/local/bin/$file"
-  done
-
-  for file in ${HOME_FILES}
-  do
-    rm "$HOME/$home"
-  done
-
-  for folder in ${CONFIG_FOLDER}
-  do
-    rm "${XDG_CONFIG_HOME}/$folder"
+    ln -s "${CONFIG_DIR}/$file" "${XDG_CONFIG_HOME}"
   done
 
 }
 
-case $1 in
-  install|-i) install ;;
-  uninstall|-u) uninstall ;;
-  help|-h|--help) show_help ;;
-  *) show_help ;;
+__uninstall(){
+
+  for file in ${SCRIPT_FILE}
+  do
+    sudo rm -f /usr/local/bin/$file
+  done
+
+  for file in ${HOME_FILE}
+  do
+    rm -f "$HOME/$file"
+  done
+
+  for file in ${CONFIG_FILE}
+  do
+    rm -f "${XDG_CONFIG_HOME}/$file"
+  done
+
+}
+
+case "$1" in
+  install|-i) __install ;;
+  uninstall|-u) __uninstall ;;
+  help|-h|--help) __show_help ;;
+  *) __show_help ;;
 esac
