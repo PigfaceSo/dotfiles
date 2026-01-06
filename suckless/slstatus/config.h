@@ -73,7 +73,7 @@ static const struct arg args[] = {
     {netspeed_rx, " %s ", "wlp2s0"},
     {cpu_freq, "| [CPU] %s ", NULL},
     {ram_used, "| [RAM] %s ", NULL},
-    {disk_total, "| [DISK] %s ", "/"},
+    {disk_used, "| [DISK_USED] %s ", "/"},
     {battery_perc, "| 󰁹 %s %% ", "BAT0"},
     {datetime, "| %s | ", "%a %F %R"},
 };

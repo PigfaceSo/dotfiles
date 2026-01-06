@@ -16,6 +16,8 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 [ -f "$HOME/.fehbg" ] && ~/.fehbg &
 
 pgrep -x slstatus >/dev/null || slstatus &
+pgrep -x udiskie >/dev/null || udiskie &
+pgrep -x dunst >/dev/null || dunst &
 
 # pgrep -x pipewire >/dev/null || pipewire &
 # pgrep -x pipewire-pulse >/dev/null || pipewire-pulse &
