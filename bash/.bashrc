@@ -71,6 +71,16 @@ alias ip="ip -c=auto"
 alias env="env | less"
 alias node-red="podman start node-red"
 alias mosquitto="podman start mosquitto"
+alias cst="nvim ~/dotfiles/suckless/st/config.h"
+alias mst="cd ~/dotfiles/suckless/st; sudo make clean install; cd -"
+alias cdwm="nvim ~/dotfiles/suckless/dwm/config.h"
+alias mdwm="cd ~/dotfiles/suckless/dwm; sudo make clean install; cd -"
+alias cdmenu="nvim ~/dotfiles/suckless/dmenu/config.h"
+alias mdmenu="cd ~/dotfiles/suckless/dmenu; sudo make clean install; cd -"
+alias cslock="nvim ~/dotfiles/suckless/slock/config.h"
+alias mslock="cd ~/dotfiles/suckless/slock; sudo make clean install; cd -"
+alias cslstatus="nvim ~/dotfiles/suckless/slstatus/config.h"
+alias mslstatus="cd ~/dotfiles/suckless/slstatus; sudo make clean install; cd -"
 
 ####################
 ##  Load Command  ##
@@ -86,9 +96,3 @@ alias mosquitto="podman start mosquitto"
 [[ -n $(command -v kuberctl) ]] && source <(kubectl completion bash)
 [[ -n $(command -v mise) ]] && eval "$(mise activate bash)"
 [[ -n $(command -v zoxide) ]] && eval "$(zoxide init --cmd cd bash)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/wonwow/google-cloud-sdk/path.bash.inc' ]; then . '/home/wonwow/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/wonwow/google-cloud-sdk/completion.bash.inc' ]; then . '/home/wonwow/google-cloud-sdk/completion.bash.inc'; fi

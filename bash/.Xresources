@@ -72,8 +72,8 @@ XTerm*internalBorder: 5
 !! Xterm class programs
 !
 
-programs*VT100.geometry: 100x30
-programs*internalBorder: 20
+float*VT100.geometry: 100x30
+float*internalBorder: 20
 
 !! URxvt terminal
 !

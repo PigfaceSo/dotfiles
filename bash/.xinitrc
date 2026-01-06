@@ -15,6 +15,8 @@ setxkbmap -layout us,th -model pc105 -option grp:caps_toggle &
 # AutoStart
 [ -f "$HOME/.fehbg" ] && ~/.fehbg &
 
+pgrep -x slstatus >/dev/null || slstatus &
+
 # pgrep -x pipewire >/dev/null || pipewire &
 # pgrep -x pipewire-pulse >/dev/null || pipewire-pulse &
 # pgrep -x wireplumber >/dev/null || wireplumber &
