@@ -13,13 +13,10 @@ XORG_CONF_FILE="$(find "${XORG_CONF_DIR}" -type f -printf '%f ')"
 SHARE_LOCAL_DIR="$HOME/.local/share"
 XDG_CONFIG_HOME="$HOME/.config"
 
-if [ ! -d "${XDG_CONFIG_HOME}" ]; then
-  mkdir -p "${XDG_CONFIG_HOME}"
-fi
 
 __show_help(){
   cat << EOF
-Usage: dotfile_setup [ARGS] [OPTIONS]
+Usage: dotmk [ARGS] [OPTIONS]
 Options:
     install,   -i           Install in this dotfiles
     uninstall, -u           Uninstall in this dotfiles
@@ -29,12 +26,15 @@ EOF
 
 __install(){
 
+  test ! -d "${XDG_CONFIG_HOME}" && mkdir -p "${XDG_CONFIG_HOME}"
+  test ! -d "${XORG_CONF_DIR}" && sudo mkdir -p "${XORG_CONF_DIR}"
+
   cp -r "${FONT_DIR}" "${SHARE_LOCAL_DIR}"
 
-  for file in ${XORG_CONF_FILE}
-  do
-    sudo ln -s "${XORG_CONF_DIR}/$file" /etc/X11/xorg.conf.d/
-  done
+  # for file in ${XORG_CONF_FILE}
+  # do
+  #   sudo ln -s "${XORG_CONF_DIR}/$file" /etc/X11/xorg.conf.d/
+  # done
   
   for file in ${SCRIPT_FILE}
   do
@@ -50,7 +50,6 @@ __install(){
   do
     ln -s "${CONFIG_DIR}/$file" "${XDG_CONFIG_HOME}"
   done
-
 }
 
 __uninstall(){
@@ -69,7 +68,6 @@ __uninstall(){
   do
     rm -f "${XDG_CONFIG_HOME}/$file"
   done
-
 }
 
 case "$1" in
