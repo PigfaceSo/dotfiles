@@ -5,14 +5,10 @@ SCRIPT_DIR="${DOTFILES_DIR}/scripts"
 HOME_DIR="${DOTFILES_DIR}/home"
 CONFIG_DIR="${DOTFILES_DIR}/config"
 FONT_DIR="${DOTFILES_DIR}/fonts"
-XORG_CONF_DIR="${DOTFILES_DIR}/xorg.conf.d"
 SCRIPT_FILE="$(find "${SCRIPT_DIR}" -type f -printf '%f ')"
 HOME_FILE="$(find "${HOME_DIR}" -type f -printf '%f ')"
 CONFIG_FILE="$(find "${CONFIG_DIR}" -mindepth 1 -type d -printf '%f ')"
-XORG_CONF_FILE="$(find "${XORG_CONF_DIR}" -type f -printf '%f ')"
 SHARE_LOCAL_DIR="$HOME/.local/share"
-XDG_CONFIG_HOME="$HOME/.config"
-
 
 __show_help(){
   cat << EOF
@@ -27,14 +23,8 @@ EOF
 __install(){
 
   test ! -d "${XDG_CONFIG_HOME}" && mkdir -p "${XDG_CONFIG_HOME}"
-  test ! -d "${XORG_CONF_DIR}" && sudo mkdir -p "${XORG_CONF_DIR}"
 
   cp -r "${FONT_DIR}" "${SHARE_LOCAL_DIR}"
-
-  # for file in ${XORG_CONF_FILE}
-  # do
-  #   sudo ln -s "${XORG_CONF_DIR}/$file" /etc/X11/xorg.conf.d/
-  # done
   
   for file in ${SCRIPT_FILE}
   do
